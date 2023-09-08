@@ -12,3 +12,12 @@
     @apply rotate-45 before:rotate-90 before:-translate-x-[50%];
   }
 }
+
+.body-background {
+  background: linear-gradient(
+    to bottom left,
+    #454b53 0%,
+    #21272f 30%,
+    #161c24 100%
+  );
+}
