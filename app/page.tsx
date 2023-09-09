@@ -1,10 +1,11 @@
-import { Header, Hero } from "@/components";
+import { Header, Hero, Services } from "@/components";
 
 export default function Home() {
   return (
-    <main className="min-h-[300vh] flex flex-col  body-background  text-white">
+    <main className="relative  flex flex-col  text-white">
       <Header />
       <Hero />
+      <Services />
     </main>
   );
 }

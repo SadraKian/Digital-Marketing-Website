@@ -12,8 +12,9 @@ const config: Config = {
         primary: "#00AB55",
       },
       screens: {
-        lg2: "900px",
-        tall: { raw: "(min-height: 850px)" },
+        xsm: "420px",
+        md2: "900px",
+        tall: { raw: "(min-height: 780px)" },
       },
     },
   },
