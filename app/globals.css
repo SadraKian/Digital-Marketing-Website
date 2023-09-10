@@ -13,7 +13,8 @@
   }
 }
 
-.hero-background {
+.hero-background,
+.body-background {
   background: linear-gradient(
     to bottom left,
     #454b53 0%,

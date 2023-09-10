@@ -12,12 +12,11 @@ const Hero = () => {
 
   // Adding an event listener inside a useEffect for finding out each time the page gets resized
   useEffect(() => {
-    // Handling scroll behavior and position for hero section on devices with the screen under 750
+    // Handling scroll behavior and position for hero section on devices with the screen under 780
     const handleHeroScroll = (positionToGetHeroFixed: number) => {
       if (window.innerHeight < 780) {
         if (heroRef.current) {
           const scrollY = window.scrollY;
-          console.log("window:", scrollY, "position:", positionToGetHeroFixed);
 
           if (scrollY >= positionToGetHeroFixed) {
             setHeroFixed(true);
@@ -27,6 +26,8 @@ const Hero = () => {
         }
       }
     };
+
+    // Getting hero insets and position to get hero fixed on small devices each time the page gets resized or gets scrolled and calling an event listener for scrolling the page in function bellow
 
     const handleHeroPosition = () => {
       setHeroFixed(false);
@@ -51,6 +52,8 @@ const Hero = () => {
 
     handleHeroPosition();
 
+    // Adding an event listener so every time the page gets resized the fixed position of hero section gets modified
+
     window.addEventListener("resize", () => {
       setHeroFixed(false);
       handleHeroPosition();
@@ -62,8 +65,6 @@ const Hero = () => {
         handleHeroPosition();
       });
   }, []);
-
-  // Getting hero insets and position to get hero fixed on small devices each time the page gets resized
 
   return (
     <section

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { ServicesDetails } from ".";
 
 const Services = () => {
   return (
@@ -65,6 +66,8 @@ const Services = () => {
           </p>
         </section>
       </article>
+
+      <ServicesDetails />
     </section>
   );
 };
