@@ -72,12 +72,10 @@ const Hero = () => {
       ref={heroRef}
       className={`${
         heroFixed ? `fixed bottom-0` : ""
-      } tall:fixed flex min-h-screen w-full pt-[15vh] text-white tall:top-0 landscape:pt-24 hero-background `}
-    >
+      } tall:fixed flex min-h-screen w-full pt-[15vh] text-white tall:top-0 landscape:pt-24 hero-background `}>
       <div
         id="heroTextContent"
-        className="flex flex-col gap-12 sm:gap-16 w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10"
-      >
+        className="flex flex-col gap-12 sm:gap-[70px] 2xl:gap-28  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10">
         <div className="flex flex-col md:flex flex-wrap md2:items-start w-[300px] gap-5 items-center text-4xl xsm:text-5xl font-bold ">
           <span className="drop-shadow-[1px_1px_1px_lightgray]">
             Welcome to
@@ -101,30 +99,28 @@ const Hero = () => {
         </button>
 
         <div className="flex flex-col gap-6 items-center md2:items-start">
-          <span className=" text-primary font-semibold">AVAILABLE FOR</span>
+          <span className=" text-primary font-semibold ml-3">
+            AVAILABLE FOR
+          </span>
           <div className="flex gap-3 ">
             <Link
               href=""
-              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-green-500 hover:drop-shadow-[0_3px_4px_rgb(34,197,94)] transition-all ease-in duration-300"
-            >
+              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-green-500 hover:drop-shadow-[0_3px_4px_rgb(34,197,94)] transition-all ease-in duration-300">
               <FaWhatsapp className="text-slate-900 opacity-80" />
             </Link>
             <Link
               href=""
-              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-gradient-to-br from-orange-300 to-yellow-400 hover:drop-shadow-[0_1px_2px_yellow] transition-all ease-in duration-300"
-            >
+              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-gradient-to-br from-orange-300 to-yellow-400 hover:drop-shadow-[0_1px_2px_yellow] transition-all ease-in duration-300">
               <FaInstagram className="text-slate-900 opacity-80" />
             </Link>
             <Link
               href=""
-              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full   hover:bg-red-500 hover:drop-shadow-[0_3px_4px_rgb(239,68,68)] transition-all ease-in duration-300"
-            >
+              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full   hover:bg-red-500 hover:drop-shadow-[0_3px_4px_rgb(239,68,68)] transition-all ease-in duration-300">
               <FaYoutube className="text-slate-900 opacity-80" />
             </Link>
             <Link
               href=""
-              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-purple-600 hover:drop-shadow-[0_3px_4px_rgb(147,51,234)] transition-all ease-in duration-300"
-            >
+              className="bg-slate-400 w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-purple-600 hover:drop-shadow-[0_3px_4px_rgb(147,51,234)] transition-all ease-in duration-300">
               <FaGithub className="text-slate-900 opacity-80" />
             </Link>
           </div>
