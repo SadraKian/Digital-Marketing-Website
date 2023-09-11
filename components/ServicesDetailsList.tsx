@@ -1,8 +1,8 @@
 "use client";
-
 import { useState, useEffect } from "react";
-import { ServicesDetails as servicesData } from "../data/data";
+import { ServicesDetails as servicesData } from "@/data/data";
 import { ServicesDetail } from ".";
+
 const ServicesDetailsList = () => {
   const [servicesDetails, setServicesDetails] = useState([]);
   useEffect(() => {
@@ -21,14 +21,10 @@ const ServicesDetailsList = () => {
         </p>
       </div>
 
-      <article className="flex flex-col items-center w-full gap-7">
+      <article className="flex flex-col items-center w-full gap-7 pb-16">
         {servicesDetails.length > 0 &&
           servicesDetails.map((detail: ServicesDetail) => (
-            <ServicesDetail
-              title={detail.title}
-              imageSrc={detail.imageSrc}
-              description={detail.description}
-            />
+            <ServicesDetail key={detail.id} servicesDetailInfo={detail} />
           ))}
       </article>
     </section>

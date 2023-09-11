@@ -28,8 +28,11 @@ const Nav = ({ isMobileNavVisible, setIsMobileNavVisible }: NavProps) => {
         }`}>
         {mobileNavContent}
       </div>
-      <div className="dekstopNav hidden md:flex gap-7  h-[70px] items-center">
-        <nav className="flex gap-12 lg:gap-16 font-semibold">
+      <div className=" hidden md:flex gap-7  h-[70px] items-center">
+        <nav
+          id="dekstopNav"
+          aria-label="Main Dekstop Nav"
+          className="flex gap-12 lg:gap-16 font-semibold">
           <Link href="/" className="hover:text-yellow-300">
             Home
           </Link>

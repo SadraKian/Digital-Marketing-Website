@@ -40,13 +40,9 @@ const Hero = () => {
 
         positionToGetHeroFixed = heroBottom - window.innerHeight;
 
-        if (window.innerHeight < 780) {
-          window.addEventListener("scroll", () => {
-            handleHeroScroll(positionToGetHeroFixed);
-          });
-        } else {
-          setHeroFixed(false);
-        }
+        window.addEventListener("scroll", () => {
+          handleHeroScroll(positionToGetHeroFixed);
+        });
       }
     };
 

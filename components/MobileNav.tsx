@@ -28,7 +28,9 @@ const MobileNav = ({ isMobileNavVisible, setIsMobileNavVisible }: NavProps) => {
           title="Digital Marketing"
         />
       </div>
-      <nav className=" flex flex-col landscape:gap-7 gap-14 font-semibold text-lg ">
+      <nav
+        aria-label="Main Mobile Nav"
+        className=" flex flex-col landscape:gap-7 gap-14 font-semibold text-lg ">
         <Link href="" className="hover:text-yellow-300">
           Home
         </Link>
