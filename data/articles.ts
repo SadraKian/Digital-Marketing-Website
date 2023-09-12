@@ -2,7 +2,7 @@ const articlesData = [
   {
     id: 1,
     title: "Digital Marketing Expert Guide",
-    date: "8-19-2023",
+    date: "08-19-2023",
     imageSrc: "/assets/images/digitalMarketer.jpg",
     intro:
       "In the digital age, a digital marketing expert is crucial for online business success. Our guide helps both experienced marketers transitioning to digital and newcomers passionate about online marketing. We cover essential skills and the latest trends for success in this ever-evolving field.",
@@ -64,7 +64,7 @@ const articlesData = [
   {
     id: 2,
     title: "UX for Growing Businesses",
-    date: "7-25-2023",
+    date: "07-25-2023",
     imageSrc: "/assets/images/ux.jpg",
     intro:
       "In today's business world, prioritizing User Experience (UX) is essential for success. Regardless of your company's size, recognizing the value of UX can greatly influence your growth. This guide explores how UX investments can boost business success, customer satisfaction, and long-term growth.",
@@ -120,7 +120,7 @@ const articlesData = [
   {
     id: 3,
     title: "Online Business Guide",
-    date: "6-29-2023",
+    date: "06-29-2023",
     imageSrc: "/assets/images/onlineBussiness.jpg",
     intro:
       "Launching an online business is thrilling yet challenging. To succeed, you need a strong grasp of the digital world. This guide covers key pre-launch insights, enabling smarter choices for your online business journey and enhancing your odds of success.",

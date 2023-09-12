@@ -8,6 +8,7 @@ import Services from "./Services";
 import ServicesCardsList from "./ServicesCardsList";
 import ServicesDetail from "./ServicesDetail";
 import ServicesDetailsList from "./ServicesDetailsList";
+import Footer from "./Footer";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   ArticlesHighlights,
   ServicesCardsList,
   ArticleHighlightCard,
+  Footer,
 };

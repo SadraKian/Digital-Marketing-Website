@@ -35,7 +35,7 @@ const ServicesCardsList = () => {
         </p>
       </section>
 
-      <section className="w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6  bg-[#212B36] rounded-xl  object-contain gap-7 lg:gap-12 h-[300px]  md:h-[375px] lg:mt-14 hover:scale-110 transition-all ease-in duration-300">
+      <section className="w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6  bg-[#212B36] rounded-xl  object-contain gap-7 lg:gap-12 h-[300px]  md:h-[375px] lg:mt-14 hover:scale-105 transition-all ease-in duration-300">
         <Image
           src="/assets/images/branding.svg"
           alt="Branding"

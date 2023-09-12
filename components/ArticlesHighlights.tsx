@@ -17,7 +17,7 @@ const ArticlesHighlights = () => {
       setCurrentArticleIndex(index);
       setCurrentArticle(articles[index]);
       setShowArticle(true);
-    }, 400);
+    }, 300);
   };
 
   return (
@@ -27,7 +27,7 @@ const ArticlesHighlights = () => {
       <h3 className="text-2xl sm:text-3xl font-bold ">Latest articles</h3>
       <div
         id="article-highlight-container"
-        className="flex flex-col lg:flex-row items-center justify-between p-5 lg:p-8 bg-[#232931] w-[90vw] sm:w-[75vw] md:w-[70vw] lg:w-5/6 xl:w-3/4 2xl:w-1/2 lg:min-h-[400px] rounded-lg my-7 gap-9">
+        className="flex flex-col lg:flex-row items-center justify-between p-5 lg:p-8 bg-[#232931] w-[90vw] sm:w-[75vw] md:w-[70vw] lg:w-5/6 xl:w-3/4 2xl:w-1/2 lg:min-h-[400px] rounded-lg my-7 gap-2 lg:gap-9">
         {currentArticle ? (
           <ArticleHighlightCard
             article={currentArticle as Article}
@@ -38,14 +38,14 @@ const ArticlesHighlights = () => {
         )}
         <nav
           aria-label="Articles highlights section nav"
-          className="flex lg:flex-col gap-6">
+          className="flex lg:flex-col gap-4 lg:gap-[10px]">
           {articles.map((article, index) => (
             <button
               key={article.id}
               onClick={() => {
                 handleClick(index);
               }}
-              className={`w-4 h-4 rounded-full transition-all ease-in duration-100 ${
+              className={`w-[13px] h-[13px] rounded-full transition-all ease-in duration-300 ${
                 currentArticleIndex == index
                   ? "bg-[#62A0FF] lg:h-9"
                   : "bg-gray-300"

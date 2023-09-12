@@ -68,7 +68,7 @@ const Hero = () => {
       ref={heroRef}
       className={`${
         heroFixed ? `fixed bottom-0` : ""
-      } tall:fixed flex min-h-screen w-full pt-[15vh] text-white tall:top-0 landscape:pt-24 hero-background `}>
+      } tall:fixed flex min-h-screen w-full pt-[15vh] text-white tall:top-0 landscape:pt-24 body-background `}>
       <div
         id="heroTextContent"
         className="flex flex-col gap-12 sm:gap-[70px] 2xl:gap-28  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10">
