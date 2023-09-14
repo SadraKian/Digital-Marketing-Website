@@ -1,7 +1,8 @@
+"use client";
 import { months } from "@/data/data";
 import Image from "next/image";
-import React from "react";
-
+import { useContext } from "react";
+import { themeContext } from "./Providers";
 type ArticleCardProps = {
   article: Article;
   showArticle: boolean;
@@ -15,6 +16,8 @@ const ArticleHighlightCard = ({ article, showArticle }: ArticleCardProps) => {
   const month = months[monthNumber];
   const articleDate =
     newDate.substring(2, 5) + " " + month + " " + newDate.substring(5);
+
+  const { isThemeDark } = useContext(themeContext);
 
   return (
     <article className="relative flex flex-col lg:flex-row items-center">
@@ -32,14 +35,24 @@ const ArticleHighlightCard = ({ article, showArticle }: ArticleCardProps) => {
         className={`${
           showArticle
             ? "opacity-100 -top-16 lg:top-0 transition-all ease-in duration-300"
-            : "opacity-0 top-[10%] lg:top-[13%]"
+            : "opacity-0 top-[10%] lg:top-[15%]"
         } relative lg:right-10 flex flex-col gap-3 lg:gap-5 items-center w-full `}>
         <h6 className="sm:text-xl font-semibold">{title}</h6>
-        <span className="sm:text-xl relative text-lg font-semibold text-gray-400">
+        <span
+          className={`sm:text-xl relative text-lg font-semibold  ${
+            isThemeDark ? "text-gray-400" : "text-gray-700"
+          }`}>
           {articleDate}
         </span>
-        <p className="text-sm md:text-base leading-7 p-3">{intro}</p>
-        <button className="text-sm font-semibold  md:font-bold text-gray-700 bg-[#62A0FF] hover:bg-[#4881d6] w-28 h-10  md:w-32 md:h-12 rounded-full self-start transition-all ease-in duration-200">
+        <p className="text-sm md:text-base leading-7 p-3 font-semibold">
+          {intro}
+        </p>
+        <button
+          className={`${
+            isThemeDark
+              ? "bg-[#62A0FF] hover:bg-[#4881d6] text-gray-700"
+              : "bg-gradient-to-r from-blue-600 to-blue-500 text-gray-100 hover:brightness-125"
+          } text-sm font-semibold  md:font-bold   w-28 h-10  md:w-32 md:h-12 rounded-full self-start transition-all ease-in duration-200`}>
           Read More
         </button>
       </div>

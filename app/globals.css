@@ -5,7 +5,7 @@
 @layer components {
   .hamburgerBtn {
     @apply before:-translate-x-[40%] after:-translate-x-[60%] 
-    after:top-[9px] after:content-[''] after:w-8 after:h-1 after:bg-white after:absolute  after:rounded-full  before:-top-[9px];
+    after:top-[9px] after:content-[''] after:w-8 after:h-1  after:absolute  after:rounded-full  before:-top-[9px];
   }
 
   .animatedHamburgerBtn {

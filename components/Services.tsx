@@ -1,16 +1,40 @@
+"use client";
+import { useContext } from "react";
 import { ArticlesHighlights, ServicesDetailsList, ServicesCardsList } from ".";
-
+import { themeContext } from "./Providers";
 const Services = () => {
+  let { isThemeDark } = useContext(themeContext);
+  let theme = isThemeDark
+    ? {
+        color: "white",
+      }
+    : {
+        color: "black",
+        backgroundImage: "linear-gradient(to left,#267871 35%, #135058 100%)",
+      };
   return (
     <section
       id="services-section"
-      className="relative tall:top-[120vh] xl:top-[117vh] top-[150vh] z-40 bg-[#161C24] flex flex-col items-center py-10  gap-12 lg:gap-16 w-full">
+      style={theme}
+      className="relative top-[150vh]  tall:top-[120vh]  z-30 bg-[#161C24] flex flex-col items-center py-10  gap-12 lg:gap-16 w-full">
       <div className="flex flex-col gap-5 items-center">
-        <div className="w-16 rounded-3xl bg-gray-600 h-1" />
-        <h3 className="text-gray-600 font-semibold">RASAM</h3>
+        <div
+          className={`${
+            isThemeDark ? "bg-gray-600" : "bg-blue-100"
+          } w-16 rounded-3xl  h-1`}
+        />
+        <h3
+          className={`${
+            isThemeDark ? "text-gray-600" : "text-blue-100"
+          } font-semibold`}>
+          RASAM
+        </h3>
       </div>
 
-      <h3 className="font-semibold text-lg md:text-4xl drop-shadow-[0_0.5px_1px_whitesmoke]">
+      <h3
+        className={`${
+          isThemeDark ? "text-white" : "text-blue-100"
+        } font-semibold text-lg md:text-4xl drop-shadow-[0_0.25px_0.5px_whitesmoke]`}>
         What Rasam Helps you with
       </h3>
 

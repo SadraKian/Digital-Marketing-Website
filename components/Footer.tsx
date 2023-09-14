@@ -4,9 +4,9 @@ import { FaGithub, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#232932] relative tall:top-[120vh] xl:top-[117vh] top-[150vh] w-screen p-6 sm:p-8 md:p-9 flex flex-col items-center  gap-8">
-      <section className="flex flex-col w-2/3 gap-8 items-center border-b-2 border-slate-500 border-solid py-10">
-        <h6 className="text-xl 2xl:text-3xl font-semibold ">
+    <footer className="bg-[#232932] relative tall:top-[120vh] xl:top-[117vh] top-[150vh] text-white w-screen p-6 sm:p-8 md:p-9 flex flex-col items-center  gap-8">
+      <section className="flex flex-col w-4/5 sm:w-2/3 gap-8 items-center border-b-2 border-slate-500 border-solid py-10">
+        <h6 className="text-lg sm:text-xl 2xl:text-3xl font-semibold ">
           Want to partner with us?
         </h6>
         <p className="text-center text-sm md:text-base md:w-5/6">
@@ -22,7 +22,7 @@ const Footer = () => {
       <nav
         id="footer-nav"
         aria-label="Footer Nav"
-        className="flex flex-col md:flex-row  justify-evenly gap-12 border-b-2  border-slate-500 border-solid pb-10 w-2/3">
+        className="flex flex-col md:flex-row  justify-evenly   md:text-[15px] lg:text-base gap-12 border-b-2  border-slate-500 border-solid pb-10 w-2/3">
         <ul className="flex flex-col gap-3">
           <li>
             <h6 className="text-primary text-lg  font-semibold">Services</h6>
@@ -59,40 +59,6 @@ const Footer = () => {
 
         <ul className="flex flex-col gap-3">
           <li>
-            <h6 className="text-primary text-lg font-semibold">Rasam</h6>
-          </li>
-          <li>
-            <Link
-              className="hover:text-slate-400 transition-all ease-in duration-300"
-              href="">
-              Home Page
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-slate-400 transition-all ease-in duration-300"
-              href="">
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-slate-400 transition-all ease-in duration-300"
-              href="">
-              Terms of service
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-slate-400 transition-all ease-in duration-300"
-              href="">
-              About us
-            </Link>
-          </li>
-        </ul>
-
-        <ul className="flex flex-col gap-3">
-          <li>
             <h6 className="text-primary text-lg font-semibold">Contact</h6>
           </li>
           <li>
@@ -114,6 +80,40 @@ const Footer = () => {
               className="hover:text-slate-400 transition-all ease-in duration-300"
               href="">
               Contact us
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-slate-400 transition-all ease-in duration-300"
+              href="">
+              About us
+            </Link>
+          </li>
+        </ul>
+
+        <ul className="flex flex-col gap-3">
+          <li>
+            <h6 className="text-primary text-lg font-semibold">Rasam</h6>
+          </li>
+          <li>
+            <Link
+              className="hover:text-slate-400 transition-all ease-in duration-300"
+              href="">
+              Home Page
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-slate-400 transition-all ease-in duration-300"
+              href="">
+              Blogs
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-slate-400 transition-all ease-in duration-300"
+              href="">
+              Terms of service
             </Link>
           </li>
           <li>
