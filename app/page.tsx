@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="relative flex  flex-col font-[sans-serif] min-h-[150vh]">
+    <main className="relative flex  flex-col font-[sans-serif] ">
       <Providers>
         <Settings />
         <Header />

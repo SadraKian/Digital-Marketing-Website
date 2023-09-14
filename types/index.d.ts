@@ -24,3 +24,21 @@ interface Article {
   sections: ArticleSection[];
   conclusion: string;
 }
+
+type ThemeContextType = {
+  isThemeDark: boolean;
+  setIsThemeDark: React.Dispatch<React.SetStateAction<boolean>>;
+  presets: string[];
+  setPresets: React.Dispatch<React.SetStateAction<string[]>>;
+};
+
+type SettingsContextType = {
+  isSettingsOpen: boolean;
+  setIsSettingsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+type PresetsButtonProps = {
+  setPresets: React.Dispatch<React.SetStateAction<string[]>>;
+  preset: string[];
+  currentPreset: string[];
+};

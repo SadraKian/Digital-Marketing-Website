@@ -17,15 +17,17 @@ const ServicesDetailsList = () => {
     <section
       className={`${
         isThemeDark ? "bg-[#151822]" : "text-white"
-      } w-full lg:w-[90%] rounded-2xl py-20 flex flex-col items-center gap-20`}>
+      } w-full lg:w-[90%] rounded-2xl py-20 flex flex-col items-center gap-20`}
+    >
       <div className="flex flex-col gap-5 items-center">
         <h5 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
           Our Competencies
         </h5>
         <p
           className={`${
-            isThemeDark ? "text-slate-700" : "text-blue-200"
-          } w-4/5 md:w-3/5 text-center x text-lg`}>
+            isThemeDark ? "text-slate-400" : "text-blue-200"
+          } w-4/5 md:w-3/5 text-center x text-lg`}
+        >
           We fully understand your business. If you need to update something, we
           are more than happy to help you with the services we are providing
         </p>

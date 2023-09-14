@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useRef, createContext, useContext } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import { FaGithub, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
 
 import { themeContext } from "./Providers";
 const Hero = () => {
-  let { isThemeDark } = useContext(themeContext);
+  let { isThemeDark, presets } = useContext(themeContext);
   let theme = isThemeDark
     ? {
         color: "white",
@@ -16,7 +16,7 @@ const Hero = () => {
     : {
         color: "black",
         backgroundColor: "#f7ffff",
-        backgroundImage: "linear-gradient(225deg,  #ccf2db, #d8f3f9)",
+        backgroundImage: "linear-gradient(225deg,  #bfdad6, #d6eae1)",
       };
 
   const heroRef = useRef<HTMLElement | null>(null);
@@ -26,12 +26,11 @@ const Hero = () => {
 
   // Adding an event listener inside a useEffect for finding out each time the page gets resized
   useEffect(() => {
-    // Handling scroll behavior and position for hero section on devices with the screen under 780
+    // Handling scroll behavior and position for hero section on devices with the screen under 720
     const handleHeroScroll = (positionToGetHeroFixed: number) => {
-      if (window.innerHeight < 780) {
+      if (window.innerHeight < 720) {
         if (heroRef.current) {
           const scrollY = window.scrollY;
-
           if (scrollY >= positionToGetHeroFixed) {
             setHeroFixed(true);
           } else if (scrollY < positionToGetHeroFixed) {
@@ -44,19 +43,20 @@ const Hero = () => {
     // Getting hero insets and position to get hero fixed on small devices each time the page gets resized or gets scrolled and calling an event listener for scrolling the page in function bellow
 
     const handleHeroPosition = () => {
-      setHeroFixed(false);
-      let heroTop: number;
-      let heroBottom: number;
-      let positionToGetHeroFixed: number;
       if (heroRef.current) {
-        heroTop = heroRef.current.offsetTop;
-        heroBottom = heroTop + heroRef.current.offsetHeight;
-
-        positionToGetHeroFixed = heroBottom - window.innerHeight;
-
-        window.addEventListener("scroll", () => {
-          handleHeroScroll(positionToGetHeroFixed);
-        });
+        let heroTop = heroRef.current.offsetTop;
+        let heroBottom = heroTop + heroRef.current.offsetHeight;
+        let positionToGetHeroFixed = heroBottom - window.innerHeight;
+        handleHeroScroll(positionToGetHeroFixed);
+        if (positionToGetHeroFixed > 0) {
+          window.addEventListener("scroll", () => {
+            handleHeroScroll(positionToGetHeroFixed);
+          });
+          return () =>
+            removeEventListener("scroll", () => {
+              handleHeroScroll(positionToGetHeroFixed);
+            });
+        }
       }
     };
 
@@ -68,7 +68,6 @@ const Hero = () => {
       setHeroFixed(false);
       handleHeroPosition();
     });
-
     return () =>
       window.removeEventListener("resize", () => {
         setHeroFixed(false);
@@ -83,17 +82,24 @@ const Hero = () => {
       ref={heroRef}
       className={`${
         heroFixed ? `fixed bottom-0` : ""
-      } tall:fixed flex min-h-screen w-full pt-[15vh]  tall:top-0 landscape:pt-24`}>
+      } tall:fixed flex min-h-screen w-full pt-[15vh]  tall:top-0 landscape:pt-24`}
+    >
       <div
         id="heroTextContent"
-        className="flex flex-col gap-12 sm:gap-[70px] 2xl:gap-28  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10">
+        className="flex flex-col gap-12 sm:gap-[70px]  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10"
+      >
         <div className="flex flex-col md:flex flex-wrap md2:items-start w-[300px] gap-5 items-center text-4xl xsm:text-5xl font-bold ">
           <span className="drop-shadow-[1px_1px_1px_lightgray]">
             Welcome to
           </span>
           <div className="flex flex-col gap-5 md2:flex-row items-center md2:gap-2">
             <span className="drop-shadow-[1px_1px_1px_lightgray]">Rasam</span>
-            <span className="text-primary drop-shadow-[2px_5px_5px_rgb(0,171,85,0.8)]">
+            <span
+              style={{
+                color: presets[1],
+                textShadow: `2px 2px 4px ${presets[1]}`,
+              }}
+            >
               Website
             </span>
           </div>
@@ -105,12 +111,25 @@ const Hero = () => {
           success.
         </p>
 
-        <button className="transition-all ease-in hover:bg-green-600 duration-300 font-semibold text-lg bg-primary w-28 h-11 rounded-lg hover:drop-shadow-[2px_12px_12px_rgb(0,171,85,0.5)] drop-shadow-[0px_7px_7px_rgb(0,171,85,0.5)]">
+        <button
+          style={{
+            backgroundColor: presets[1],
+            boxShadow: `2px 3px 10px 0px ${presets[1]}`,
+          }}
+          className=" transition-all text-white ease-in hover:opacity-80 duration-300 font-semibold text-lg  w-28 h-11 rounded-lg
+          "
+        >
           Start
         </button>
 
         <div className="flex flex-col gap-6 items-center md2:items-start">
-          <span className=" text-primary font-semibold ml-3">
+          <span
+            style={{
+              color: presets[1],
+              textShadow: `1px 1px 2px ${presets[1]}`,
+            }}
+            className=" font-semibold ml-3"
+          >
             AVAILABLE FOR
           </span>
           <div className="flex gap-3 ">
@@ -120,7 +139,8 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-green-500 hover:drop-shadow-[0_3px_4px_rgb(34,197,94)] transition-all ease-in duration-300`}>
+              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-green-500 hover:drop-shadow-[0_3px_4px_rgb(34,197,94)] transition-all ease-in duration-300`}
+            >
               <FaWhatsapp className=" opacity-80" />
             </Link>
             <Link
@@ -129,7 +149,8 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-gradient-to-br from-orange-500 to-yellow-500 hover:drop-shadow-[0_1px_2px_yellow] transition-all ease-in duration-300`}>
+              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-gradient-to-br from-orange-500 to-yellow-500 hover:drop-shadow-[0_1px_2px_yellow] transition-all ease-in duration-300`}
+            >
               <FaInstagram className=" opacity-80" />
             </Link>
             <Link
@@ -138,7 +159,8 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full   hover:bg-red-600 hover:drop-shadow-[0_2px_3px_rgb(239,68,68)] transition-all ease-in duration-300`}>
+              } w-12 h-12 grid place-content-center text-2xl rounded-full   hover:bg-red-600 hover:drop-shadow-[0_2px_3px_rgb(239,68,68)] transition-all ease-in duration-300`}
+            >
               <FaYoutube className=" opacity-80" />
             </Link>
             <Link
@@ -147,7 +169,8 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-purple-600 hover:drop-shadow-[0_3px_4px_rgb(147,51,234)] transition-all ease-in duration-300`}>
+              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-purple-600 hover:drop-shadow-[0_3px_4px_rgb(147,51,234)] transition-all ease-in duration-300`}
+            >
               <FaGithub className=" opacity-80" />
             </Link>
           </div>

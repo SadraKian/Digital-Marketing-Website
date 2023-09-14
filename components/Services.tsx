@@ -16,7 +16,8 @@ const Services = () => {
     <section
       id="services-section"
       style={theme}
-      className="relative top-[150vh]  tall:top-[120vh]  z-30 bg-[#161C24] flex flex-col items-center py-10  gap-12 lg:gap-16 w-full">
+      className="relative top-[150vh]  z-30 bg-[#161C24] flex flex-col items-center py-10  gap-12 lg:gap-16 w-full"
+    >
       <div className="flex flex-col gap-5 items-center">
         <div
           className={`${
@@ -26,7 +27,8 @@ const Services = () => {
         <h3
           className={`${
             isThemeDark ? "text-gray-600" : "text-blue-100"
-          } font-semibold`}>
+          } font-semibold`}
+        >
           RASAM
         </h3>
       </div>
@@ -34,7 +36,8 @@ const Services = () => {
       <h3
         className={`${
           isThemeDark ? "text-white" : "text-blue-100"
-        } font-semibold text-lg md:text-4xl drop-shadow-[0_0.25px_0.5px_whitesmoke]`}>
+        } font-semibold text-lg md:text-4xl drop-shadow-[0_0.25px_0.5px_whitesmoke]`}
+      >
         What Rasam Helps you with
       </h3>
 

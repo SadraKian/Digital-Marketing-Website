@@ -11,6 +11,7 @@ import ServicesDetailsList from "./ServicesDetailsList";
 import Footer from "./Footer";
 import Providers from "./Providers";
 import Settings from "./Settings";
+import Loading from "./Loading";
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Footer,
   Providers,
   Settings,
+  Loading,
 };

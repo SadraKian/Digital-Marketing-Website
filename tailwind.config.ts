@@ -14,7 +14,7 @@ const config: Config = {
       screens: {
         xsm: "420px",
         md2: "900px",
-        tall: { raw: "(min-height: 780px)" },
+        tall: { raw: "(min-height: 720px)" },
       },
     },
   },
