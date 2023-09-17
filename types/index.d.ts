@@ -19,6 +19,7 @@ interface Article {
   id: number;
   title: string;
   date: string;
+  category: string;
   imageSrc: string;
   intro: string;
   sections: ArticleSection[];

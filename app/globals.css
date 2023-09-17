@@ -40,68 +40,48 @@
   transition: all ease-in-out 0.3s;
 }
 
-.span-1 {
-  --i: 1;
-}
-.span-2 {
-  --i: 2;
-}
-.span-3 {
-  --i: 3;
-}
-.span-4 {
-  --i: 4;
-}
-.span-5 {
-  --i: 5;
-}
-.span-6 {
-  --i: 6;
-}
-.span-7 {
-  --i: 7;
-}
-.span-8 {
-  --i: 8;
-}
-.span-9 {
-  --i: 9;
-}
-.span-10 {
-  --i: 10;
-}
-.span-11 {
-  --i: 11;
-}
-.span-12 {
-  --i: 12;
-}
-.span-13 {
-  --i: 13;
-}
-.span-14 {
-  --i: 14;
-}
-.span-15 {
-  --i: 15;
-}
-.span-16 {
-  --i: 16;
-}
-.span-17 {
-  --i: 17;
-}
-.span-18 {
-  --i: 18;
-}
-.span-19 {
-  --i: 19;
-}
-.span-20 {
-  --i: 20;
+/* animating loading spinner */
+
+.loader {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  animation-name: animate-bg;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
 }
 
-.spanShadow {
+.loader-span {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  background: #00ff0a;
+  transform-origin: center;
   box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 40px #00ff0a,
     0 0 60px #00ff0a, 0 0 80px #00ff0a, 0 0 100px #00ff0a;
+  animation-delay: 0;
+  animation-name: animate-loader;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes animate-bg {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes animate-loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

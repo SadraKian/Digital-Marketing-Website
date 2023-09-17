@@ -1,7 +1,15 @@
+import { Blog, Footer, Header, Providers, Settings } from "@/components";
 import React from "react";
 
-const Blog = () => {
-  return <div>Blog</div>;
+const BlogPage = () => {
+  return (
+    <main>
+      <Providers>
+        <Settings />
+        <Blog />
+      </Providers>
+    </main>
+  );
 };
 
-export default Blog;
+export default BlogPage;

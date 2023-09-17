@@ -52,20 +52,23 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
 
   let theme = isThemeDark
     ? {
-        background:
+        backgroundImage:
           "linear-gradient(to bottom left, #454b53 0%,#21272f 30%,#161c24 100%)",
+        backgroundSize: "cover",
       }
     : {
-        backgroundImage: "linear-gradient(225deg,  #ccf2db, #d8f3f9)",
+        backgroundImage: "linear-gradient(225deg,  #bfdad6, #d6eae1)",
+        backgroundSize: "cover",
       };
 
   if (content) {
     return (
       <settingsContext.Provider value={{ isSettingsOpen, setIsSettingsOpen }}>
         <themeContext.Provider
-          value={{ isThemeDark, setIsThemeDark, presets, setPresets }}
-        >
-          <div style={theme}>{children}</div>
+          value={{ isThemeDark, setIsThemeDark, presets, setPresets }}>
+          <div className="min-h-[200vh]" style={theme}>
+            {children}
+          </div>
         </themeContext.Provider>
       </settingsContext.Provider>
     );

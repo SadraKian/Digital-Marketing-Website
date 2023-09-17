@@ -1,22 +1,40 @@
 "use client";
 import { themeContext } from "@/components/Providers";
-import Image from "next/image";
 import { useContext } from "react";
 
 const Loading = () => {
   const { isThemeDark } = useContext(themeContext);
-  const numbers = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
+  const numberOfSpans = 20;
+  const angles = Array.from(
+    { length: numberOfSpans },
+    (_, index) => (360 / numberOfSpans) * index
+  );
+
+  let theme = isThemeDark
+    ? {
+        background:
+          "linear-gradient(to bottom left, #454b53 0%,#21272f 30%,#161c24 100%)",
+      }
+    : {
+        backgroundImage: "linear-gradient(225deg,  #bfdad6, #d6eae1)",
+      };
+
   return (
-    <section className="relative w-screen h-screen ">
-      {numbers.map((number) => (
-        <span
-          className={`absolute top-0 left-0 rotate-[${
-            180 * number
-          }] before:content-[""] before:w-4 before:h-4 rounded-[50% ] before:absolute before:top-0 before:left-0 span-shadow`}
-        ></span>
-      ))}
+    <section
+      style={theme}
+      className="grid pl-28 place-content-center min-h-screen w-screen ">
+      <div className="loader">
+        {angles.map((angle, index) => (
+          <span
+            key={index}
+            className="loader-span"
+            style={{
+              transform: `rotate(${angle}deg) translate(80px) rotate(-${angle}deg)`,
+              animationDelay: `${index * 0.1}s`,
+              opacity: `${index * 0.03}`,
+            }}></span>
+        ))}
+      </div>
     </section>
   );
 };

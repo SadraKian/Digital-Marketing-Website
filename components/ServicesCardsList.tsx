@@ -11,7 +11,7 @@ const ServicesCardsList = () => {
           isThemeDark
             ? "bg-[#212B36]"
             : "bg-gradient-to-bl from-[#abbaab] to-[#ffffff]"
-        } w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6    rounded-xl  object-contain gap-7 lg:gap-12 h-[300px] md:h-[375px] lg:h-[375px]  hover:scale-110 transition-all ease-in duration-300`}>
+        } w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6    rounded-xl  object-contain gap-6 lg:gap-12 h-[300px] md:h-[375px] lg:h-[375px]  hover:scale-110 transition-all ease-in duration-300`}>
         <Image
           src="/assets/images/ui.svg"
           alt="UI & UX Design"
@@ -32,7 +32,7 @@ const ServicesCardsList = () => {
           isThemeDark
             ? "bg-[#212B36]"
             : "bg-gradient-to-bl from-[#abbaab] to-[#ffffff]"
-        } w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6  rounded-xl  object-contain gap-7 lg:gap-12 h-[300px]  md:h-[375px] md:-order-1 lg:mt-14 hover:scale-110 transition-all ease-in duration-300`}>
+        } w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6  rounded-xl  object-contain gap-6 lg:gap-12 h-[300px]  md:h-[375px] md:-order-1 lg:mt-14 hover:scale-110 transition-all ease-in duration-300`}>
         <Image
           src="/assets/images/dev.svg"
           alt="Development"
@@ -42,7 +42,7 @@ const ServicesCardsList = () => {
           className="w-10 h-10"
         />
         <h5 className="text-lg font-semibold">Development</h5>
-        <p className="text-center font-[500] ">
+        <p className="text-center  sm:font-semibold  sm:leading-8 ">
           Our developers are proficient in a wide range of technologies and
           frameworks, and follow the industry standards and best practices.
         </p>
@@ -53,7 +53,7 @@ const ServicesCardsList = () => {
           isThemeDark
             ? "bg-[#212B36]"
             : "bg-gradient-to-bl from-[#abbaab] to-[#ffffff]"
-        } w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6   rounded-xl  object-contain gap-7 lg:gap-12 h-[300px]  md:h-[375px] lg:mt-14 hover:scale-105 transition-all ease-in duration-300`}>
+        } w-[280px] xsm:w-[380px] sm:w-[420] md:w-[450px] lg:w-[300px] flex flex-col items-center pt-10 px-8 pb-6   rounded-xl  object-contain gap-6 lg:gap-12 h-[300px]  md:h-[375px] lg:mt-14 hover:scale-105 transition-all ease-in duration-300`}>
         <Image
           src="/assets/images/branding.svg"
           alt="Branding"
@@ -63,7 +63,7 @@ const ServicesCardsList = () => {
           className="w-10 h-10"
         />
         <h5 className="text-lg font-semibold">Branding</h5>
-        <p className="text-center font-[500]">
+        <p className="text-center  sm:font-semibold  sm:leading-8">
           Contact us today and let us help you stand out with unique and
           memorable identity for your business.
         </p>

@@ -12,6 +12,9 @@ import Footer from "./Footer";
 import Providers from "./Providers";
 import Settings from "./Settings";
 import Loading from "./Loading";
+import Blog from "./Blog";
+import BlogHero from "./BlogHero";
+import BlogCategories from "./BlogCategories";
 
 export {
   Header,
@@ -28,4 +31,7 @@ export {
   Providers,
   Settings,
   Loading,
+  Blog,
+  BlogHero,
+  BlogCategories,
 };

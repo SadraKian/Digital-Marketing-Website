@@ -15,9 +15,10 @@ const config: Config = {
         xsm: "420px",
         md2: "900px",
         tall: { raw: "(min-height: 720px)" },
+        xtall: { raw: "(min-height: 900px)" },
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;
