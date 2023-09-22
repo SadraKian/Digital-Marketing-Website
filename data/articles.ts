@@ -1,6 +1,138 @@
 const articlesObject = [
   {
     id: 1,
+    title: "UX Design Tips",
+    date: "09-20-2023",
+    category: "UI/UX",
+    imageSrc: "/assets/images/uiDesign.jpg",
+    intro:
+      "Enhance user experiences with these valuable UX design tips. From user research to prototyping, dive into the world of user-centric design. Discover how to create interfaces that leave a lasting positive impression on users.",
+    sections: [
+      {
+        section_title: "User Research",
+        section_content:
+          "Learn the importance of user research in designing user-friendly interfaces and gathering insights for informed decisions.",
+      },
+      {
+        section_title: "Prototyping",
+        section_content:
+          "Master the art of prototyping to create interactive and engaging user interfaces that meet user needs.",
+      },
+      {
+        section_title: "Usability Testing",
+        section_content:
+          "Discover how usability testing can help you refine your designs and create products that users love.",
+      },
+      {
+        section_title: "Mobile UX",
+        section_content:
+          "Explore the unique challenges and opportunities in designing for mobile user experiences.",
+      },
+    ],
+    conclusion:
+      "Elevate your UX design skills and create interfaces that leave a lasting positive impression on users.",
+  },
+  {
+    id: 2,
+    title: "JavaScript Fundamentals",
+    date: "09-21-2023",
+    category: "Programming",
+    imageSrc: "/assets/images/javaScript.jpg",
+    intro:
+      "Get started with JavaScript programming. From variables to functions, this guide covers the fundamental concepts you need to know. Build a strong foundation in JavaScript and unlock the power to create interactive web applications.",
+    sections: [
+      {
+        section_title: "Variables and Data Types",
+        section_content:
+          "Learn how to declare variables, work with data types, and store information in your JavaScript programs.",
+      },
+      {
+        section_title: "Control Flow",
+        section_content:
+          "Master control structures like loops and conditionals to create dynamic and responsive code.",
+      },
+      {
+        section_title: "Functions and Scope",
+        section_content:
+          "Understand how functions work, scope in JavaScript, and how to write reusable code.",
+      },
+      {
+        section_title: "DOM Manipulation",
+        section_content:
+          "Explore the Document Object Model (DOM) and manipulate web page content with JavaScript.",
+      },
+    ],
+    conclusion:
+      "Build a strong foundation in JavaScript and unlock the power to create interactive web applications.",
+  },
+  {
+    id: 3,
+    title: "AI Ethics",
+    date: "09-22-2023",
+    category: "AI",
+    imageSrc: "/assets/images/AI.jpg",
+    intro:
+      "Delve into the ethical considerations of artificial intelligence. Explore topics like bias, transparency, and responsible AI development. Join the conversation on AI ethics and contribute to the development of responsible and ethical AI solutions.",
+    sections: [
+      {
+        section_title: "Bias in AI",
+        section_content:
+          "Understand the challenges of bias in AI algorithms and strategies to mitigate bias and promote fairness.",
+      },
+      {
+        section_title: "Transparency and Explainability",
+        section_content:
+          "Learn why transparency and explainability are essential in AI systems and how to implement them.",
+      },
+      {
+        section_title: "Responsible AI Practices",
+        section_content:
+          "Explore guidelines and best practices for responsible AI development and deployment.",
+      },
+      {
+        section_title: "Future of AI Ethics",
+        section_content:
+          "Stay informed about the evolving landscape of AI ethics and its impact on technology and society.",
+      },
+    ],
+    conclusion:
+      "Join the conversation on AI ethics and contribute to the development of responsible and ethical AI solutions.",
+  },
+  {
+    id: 4,
+    title: "Crypto Investing Guide",
+    date: "09-23-2023",
+    category: "Crypto",
+    imageSrc: "/assets/images/crypto.jpg",
+    intro:
+      "Navigate the world of cryptocurrency investing. From Bitcoin to altcoins, learn how to make informed decisions in this dynamic market. Make informed choices in the world of cryptocurrency investing and navigate the path to potential financial growth.",
+    sections: [
+      {
+        section_title: "Cryptocurrency Basics",
+        section_content:
+          "Get acquainted with the fundamentals of cryptocurrency, blockchain technology, and digital wallets.",
+      },
+      {
+        section_title: "Investment Strategies",
+        section_content:
+          "Discover various investment strategies, from HODLing to day trading, and find your preferred approach.",
+      },
+      {
+        section_title: "Security and Risk Management",
+        section_content:
+          "Learn how to secure your crypto holdings and manage risks in the volatile crypto market.",
+      },
+      {
+        section_title: "Altcoins and ICOs",
+        section_content:
+          "Explore alternative cryptocurrencies (altcoins) and initial coin offerings (ICOs) as investment opportunities.",
+      },
+    ],
+    conclusion:
+      "Make informed choices in the world of cryptocurrency investing and navigate the path to potential financial growth.",
+  },
+  {
+    id: 5,
     title: "Digital Marketing Expert Guide",
     date: "08-19-2023",
     category: "Digital Marketing",
@@ -63,7 +195,7 @@ const articlesObject = [
       "Becoming a digital marketing expert requires dedication, continuous learning, and a passion for all things digital. By following these steps and staying committed to your growth, you can embark on a successful career in digital marketing. Remember, the digital landscape is dynamic, so stay agile and adaptable to remain at the forefront of this exciting field.",
   },
   {
-    id: 2,
+    id: 6,
     title: "UX for Growing Businesses",
     date: "07-25-2023",
     category: "User exprience",
@@ -120,7 +252,7 @@ const articlesObject = [
     ],
   },
   {
-    id: 3,
+    id: 7,
     title: "Online Business Guide",
     date: "06-29-2023",
     category: "Business",

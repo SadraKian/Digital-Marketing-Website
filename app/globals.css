@@ -85,3 +85,21 @@
     opacity: 0;
   }
 }
+
+/* animating setting content */
+
+.setting-content {
+  animation: animate-setting 500ms linear ease-in;
+}
+
+@keyframes animate-setting {
+  0% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

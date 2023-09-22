@@ -12,10 +12,10 @@ const config: Config = {
         primary: "#00AB55",
       },
       screens: {
-        xsm: "420px",
+        xsm: "450px",
         md2: "900px",
+        "3xl": "1750px",
         tall: { raw: "(min-height: 720px)" },
-        xtall: { raw: "(min-height: 900px)" },
       },
     },
   },

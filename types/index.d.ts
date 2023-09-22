@@ -15,7 +15,7 @@ type ArticleSection = {
   section_content: string;
 };
 
-interface Article {
+type Article = {
   id: number;
   title: string;
   date: string;
@@ -24,7 +24,7 @@ interface Article {
   intro: string;
   sections: ArticleSection[];
   conclusion: string;
-}
+};
 
 type ThemeContextType = {
   isThemeDark: boolean;

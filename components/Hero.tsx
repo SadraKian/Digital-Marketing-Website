@@ -85,7 +85,7 @@ const Hero = () => {
       } tall:fixed flex min-h-screen w-full pt-[15vh]  tall:top-0 landscape:pt-24`}>
       <div
         id="heroTextContent"
-        className="flex flex-col gap-12 sm:gap-[70px] xtall:gap-20  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10">
+        className="flex flex-col gap-12 sm:gap-[70px] xtall:gap-20 3xl:gap-28  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10">
         <div className="flex flex-col md:flex flex-wrap md2:items-start w-[300px] gap-5 items-center text-4xl xsm:text-5xl font-bold ">
           <span className="drop-shadow-[1px_1px_1px_lightgray]">
             Welcome to

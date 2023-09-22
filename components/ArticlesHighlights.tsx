@@ -6,7 +6,9 @@ import { themeContext } from "./Providers";
 
 const ArticlesHighlights = () => {
   const articles: Article[] = JSON.parse(articlesData);
-  const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
+  const [currentArticleIndex, setCurrentArticleIndex] = useState(
+    articles.length - 3
+  );
   const [currentArticle, setCurrentArticle] = useState<Article>(
     articles[currentArticleIndex]
   );
@@ -48,18 +50,22 @@ const ArticlesHighlights = () => {
         <nav
           aria-label="Articles highlights section nav"
           className="flex lg:flex-col gap-4 lg:gap-[10px]">
-          {articles.map((article, index) => (
-            <button
-              key={article.id}
-              onClick={() => {
-                handleClick(index);
-              }}
-              className={`w-[13px] h-[13px] rounded-full transition-all ease-in duration-300 ${
-                currentArticleIndex == index
-                  ? "bg-[#62A0FF] lg:h-9"
-                  : "bg-gray-400"
-              }`}></button>
-          ))}
+          {articles.map((article, index) => {
+            if (index > articles.length - 4) {
+              return (
+                <button
+                  key={article.id}
+                  onClick={() => {
+                    handleClick(index);
+                  }}
+                  className={`w-[13px] h-[13px] rounded-full transition-all ease-in duration-300 ${
+                    currentArticleIndex == index
+                      ? "bg-[#62A0FF] lg:h-9"
+                      : "bg-gray-400"
+                  }`}></button>
+              );
+            }
+          })}
         </nav>
       </div>
     </section>

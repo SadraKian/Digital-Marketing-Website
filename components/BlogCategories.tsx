@@ -55,7 +55,7 @@ const BlogCategories = () => {
         <button
           key={index}
           type="button"
-          className={`rounded-xl px-6 h-9 md:px-8 lg:px-10 text-center bg-[#085973] whitespace-nowrap`}>
+          className={`rounded-xl px-6 h-9 md:px-8 lg:px-10 font-semibold text-center bg-[#085973] whitespace-nowrap`}>
           {category}
         </button>
       ))}
