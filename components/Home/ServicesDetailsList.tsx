@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useContext } from "react";
 import { ServicesDetails as servicesData } from "@/data/data";
-import { ServicesDetail } from ".";
-import { themeContext } from "./Providers";
+import ServicesDetail from "./ServicesDetail";
+import { themeContext } from "../shared/Providers";
 
 const ServicesDetailsList = () => {
   const [servicesDetails, setServicesDetails] = useState([]);

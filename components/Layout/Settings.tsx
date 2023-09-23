@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import { settingsContext, themeContext } from "./Providers";
+import { settingsContext, themeContext } from "../shared/Providers";
 import {
   FaRegMoon,
   FaRegSun,
@@ -40,7 +40,8 @@ const PresetButton = ({
         localStorage.setItem("presets", presetJson);
       }}
       style={{ color: preset[1] }}
-      className="w-[60px] h-12 border relative border-solid border-[#5b646e75] rounded-lg grid place-content-center  transition-all ease-in duration-300 hover:bg-[#5b646e5e]">
+      className="w-[60px] h-12 border relative border-solid border-[#5b646e75] rounded-lg grid place-content-center  transition-all ease-in duration-300 hover:bg-[#5b646e5e]"
+    >
       {preset[1] == currentPreset[1] && (
         <FaCheck className="absolute top-1 right-2 text-[10px] text-white" />
       )}
@@ -58,11 +59,13 @@ const Settings = () => {
     <section
       className={`${
         isSettingsOpen ? "w-full xsm:w-[275px]" : "w-0"
-      }  text-white fixed  top-0 right-0 flex-col items-center  bg-[#202a35]  sm:bg-[#202a35de] min-h-screen z-50 py-2 tall:py-6 transition-all ease-in duration-300`}>
+      }  text-white fixed  top-0 right-0 flex-col items-center  bg-[#202a35]  sm:bg-[#202a35de] min-h-screen z-50 py-2 tall:py-6 transition-all ease-in duration-300`}
+    >
       <div
         className={`${
           !isSettingsOpen ? "opacity-0" : ""
-        } setting-content flex-col tall:gap-6 gap-3  items-center `}>
+        } setting-content flex-col tall:gap-6 gap-3  items-center `}
+      >
         <div className="flex  font-bold justify-between items-center border-b-2 border-dotted p-7 border-[#baccdb80]">
           <h6>Settings</h6>
 
@@ -74,7 +77,8 @@ const Settings = () => {
                 localStorage.setItem("theme", "dark");
                 localStorage.setItem("presets", `["primary", "#00AB55"]`);
               }}
-              className="text-[15px] hover:text-blue-400 transition-all ease-in duration-300">
+              className="text-[15px] hover:text-blue-400 transition-all ease-in duration-300"
+            >
               <FaRedo />
             </button>
 
@@ -82,7 +86,8 @@ const Settings = () => {
               onClick={() => {
                 setIsSettingsOpen(false);
               }}
-              className="text-[21px] hover:text-red-500 transition-all ease-in duration-300">
+              className="text-[21px] hover:text-red-500 transition-all ease-in duration-300"
+            >
               <FaTimes />
             </button>
           </div>
@@ -96,7 +101,8 @@ const Settings = () => {
                 setIsThemeDark(true);
                 localStorage.setItem("theme", "dark");
               }}
-              className="w-[90px] h-16 grid place-content-center text-2xl border border-solid border-[#5b646e75] rounded-xl transition-all ease-in duration-300 hover:bg-[#5b646e5e]">
+              className="w-[90px] h-16 grid place-content-center text-2xl border border-solid border-[#5b646e75] rounded-xl transition-all ease-in duration-300 hover:bg-[#5b646e5e]"
+            >
               {!isThemeDark ? (
                 <FaRegMoon className="text-white" />
               ) : (
@@ -108,7 +114,8 @@ const Settings = () => {
                 setIsThemeDark(false);
                 localStorage.setItem("theme", "light");
               }}
-              className="w-[90px] h-16 grid place-content-center text-2xl border border-solid border-[#5b646e75] rounded-xl transition-all ease-in duration-300 hover:bg-[#5b646e5e]">
+              className="w-[90px] h-16 grid place-content-center text-2xl border border-solid border-[#5b646e75] rounded-xl transition-all ease-in duration-300 hover:bg-[#5b646e5e]"
+            >
               {isThemeDark ? (
                 <FaRegSun className="text-white" />
               ) : (

@@ -1,20 +1,22 @@
-import ArticleHighlightCard from "./ArticleHighlightCard";
-import ArticlesHighlights from "./ArticlesHighlights";
-import Header from "./Header";
-import Hero from "./Hero";
-import MobileNav from "./MobileNav";
-import Nav from "./Nav";
-import Services from "./Services";
-import ServicesCardsList from "./ServicesCardsList";
-import ServicesDetail from "./ServicesDetail";
-import ServicesDetailsList from "./ServicesDetailsList";
-import Footer from "./Footer";
-import Providers from "./Providers";
-import Settings from "./Settings";
-import Loading from "./Loading";
-import Blog from "./Blog";
-import BlogHero from "./BlogHero";
-import BlogCategories from "./BlogCategories";
+import ArticleHighlightCard from "./Home/ArticleHighlightCard";
+import ArticlesHighlights from "./Home/ArticlesHighlights";
+import Header from "./Layout/Header";
+import Hero from "./Home/Hero";
+import MobileNav from "./Layout/MobileNav";
+import Nav from "./Layout/Nav";
+import Services from "./Home/Services";
+import ServicesCardsList from "./Home/ServicesCardsList";
+import ServicesDetail from "./Home/ServicesDetail";
+import ServicesDetailsList from "./Home/ServicesDetailsList";
+import Footer from "./Layout/Footer";
+import Providers from "./shared/Providers";
+import Settings from "./Layout/Settings";
+import Loading from "./Layout/Loading";
+import Blogs from "./Blog/Blogs";
+import BlogHero from "./Blog/BlogHero";
+import BlogCategories from "./Blog/BlogCategories";
+import BlogPost from "./Blog/BlogPost";
+import Post from "./Blog/Post";
 
 export {
   Header,
@@ -31,7 +33,9 @@ export {
   Providers,
   Settings,
   Loading,
-  Blog,
+  Blogs,
   BlogHero,
   BlogCategories,
+  BlogPost,
+  Post,
 };

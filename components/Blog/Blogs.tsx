@@ -1,9 +1,9 @@
 "use client";
 import { useContext } from "react";
-import { themeContext } from "./Providers";
-import { BlogCategories, BlogHero, Footer, Header } from ".";
+import { themeContext } from "../shared/Providers";
+import { BlogCategories, BlogHero, Footer, Header } from "..";
 
-const Blog = () => {
+const Blogs = () => {
   const { isThemeDark, presets } = useContext(themeContext);
   let theme = isThemeDark
     ? {
@@ -25,4 +25,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blogs;

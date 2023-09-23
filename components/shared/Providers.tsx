@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
-import { Loading } from ".";
+import { Loading } from "..";
 export const themeContext = createContext<ThemeContextType>({
   isThemeDark: true,
   setIsThemeDark: () => {},
@@ -65,7 +65,8 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
       <settingsContext.Provider value={{ isSettingsOpen, setIsSettingsOpen }}>
         <themeContext.Provider
-          value={{ isThemeDark, setIsThemeDark, presets, setPresets }}>
+          value={{ isThemeDark, setIsThemeDark, presets, setPresets }}
+        >
           <div className="min-h-[200vh]" style={theme}>
             {children}
           </div>

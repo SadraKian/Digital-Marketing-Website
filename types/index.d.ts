@@ -19,7 +19,7 @@ type Article = {
   id: number;
   title: string;
   date: string;
-  category: string;
+  categories: string[];
   imageSrc: string;
   intro: string;
   sections: ArticleSection[];
@@ -42,4 +42,10 @@ type PresetsButtonProps = {
   setPresets: React.Dispatch<React.SetStateAction<string[]>>;
   preset: string[];
   currentPreset: string[];
+};
+
+type BlogPostProps = {
+  post: Article;
+  isThemeDark: boolean;
+  presets: string[];
 };

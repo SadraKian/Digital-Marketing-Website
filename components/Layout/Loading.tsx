@@ -1,5 +1,5 @@
 "use client";
-import { themeContext } from "@/components/Providers";
+import { themeContext } from "@/components/shared/Providers";
 import { useContext } from "react";
 
 const Loading = () => {
@@ -22,7 +22,8 @@ const Loading = () => {
   return (
     <section
       style={theme}
-      className="grid pl-28 place-content-center min-h-screen w-screen ">
+      className="grid pl-28 place-content-center min-h-screen w-screen "
+    >
       <div className="loader">
         {angles.map((angle, index) => (
           <span
@@ -32,7 +33,8 @@ const Loading = () => {
               transform: `rotate(${angle}deg) translate(80px) rotate(-${angle}deg)`,
               animationDelay: `${index * 0.1}s`,
               opacity: `${index * 0.03}`,
-            }}></span>
+            }}
+          ></span>
         ))}
       </div>
     </section>

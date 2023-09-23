@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
-import { themeContext } from "./Providers";
+import { themeContext } from "../shared/Providers";
 import { useContext } from "react";
 
 const Footer = () => {

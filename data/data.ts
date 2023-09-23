@@ -29,19 +29,4 @@ const servicesDetailsArray = [
   },
 ];
 
-export const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 export const ServicesDetails = JSON.stringify(servicesDetailsArray);

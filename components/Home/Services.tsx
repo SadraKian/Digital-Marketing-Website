@@ -1,7 +1,11 @@
 "use client";
 import { useContext } from "react";
-import { ArticlesHighlights, ServicesDetailsList, ServicesCardsList } from ".";
-import { themeContext } from "./Providers";
+import {
+  ArticlesHighlights,
+  ServicesDetailsList,
+  ServicesCardsList,
+} from "../index";
+import { themeContext } from "../shared/Providers";
 const Services = () => {
   let { isThemeDark } = useContext(themeContext);
   let theme = isThemeDark

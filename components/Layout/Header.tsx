@@ -1,9 +1,9 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import { Nav } from ".";
+import { Nav } from "..";
 import { FaCog } from "react-icons/fa";
-import { settingsContext, themeContext } from "./Providers";
+import { settingsContext, themeContext } from "../shared/Providers";
 
 const Header = () => {
   // Using states for finding out if the webpage should show Mobile nav and if the page is scrolled
@@ -40,11 +40,13 @@ const Header = () => {
               isThemeDark ? "bg-[#1c222ab8] " : "bg-[#adb2adcc]"
             } min-h-[70px] h-[9vh] items-center`
           : "bg-transparent h-[15vh]"
-      } justify-between w-full z-40 object-contain py-4 px-4 md:px-8 lg:px-16 xl:px-24 transition-all ease-in duration-300`}>
+      } justify-between w-full z-40 object-contain py-4 px-4 md:px-8 lg:px-16 xl:px-24 transition-all ease-in duration-300`}
+    >
       <div
         className={`flex gap-1 object-contain ${
           isPageScrolled ? "items-center" : ""
-        }`}>
+        }`}
+      >
         <Image
           src={`${
             isThemeDark
@@ -81,7 +83,8 @@ const Header = () => {
           style={{
             backgroundColor: presets[1],
           }}
-          className={`hover:drop-shadow-[0_4px_5px_${presets[1]}] text-white transition-all ease-in hover:opacity-90 duration-300 hidden font-semibold sm:block md:hidden  w-[126px] h-[38px] rounded-lg`}>
+          className={`hover:drop-shadow-[0_4px_5px_${presets[1]}] text-white transition-all ease-in hover:opacity-90 duration-300 hidden font-semibold sm:block md:hidden  w-[126px] h-[38px] rounded-lg`}
+        >
           Purchase now
         </button>
 
@@ -90,7 +93,8 @@ const Header = () => {
           className={`${
             isThemeDark ? "hover:bg-gray-600" : "hover:bg-gray-400"
           } grid place-content-center md:hidden  w-[50px] h-[50px]   transition-all ease-in duration-300 rounded-full`}
-          onClick={() => setisMobileNavVisible(!isMobileNavVisible)}>
+          onClick={() => setisMobileNavVisible(!isMobileNavVisible)}
+        >
           <div
             className={`${
               isThemeDark
@@ -107,7 +111,8 @@ const Header = () => {
         </button>
         <button
           onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-          className={`hover-${presets[0]} text-2xl p-1 transition-all ease-in duration-300`}>
+          className={`hover-${presets[0]} text-2xl p-1 transition-all ease-in duration-300`}
+        >
           <FaCog />
         </button>
       </div>

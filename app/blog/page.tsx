@@ -1,4 +1,4 @@
-import { Blog, Footer, Header, Providers, Settings } from "@/components";
+import { Blogs, Footer, Header, Providers, Settings } from "@/components";
 import React from "react";
 
 const BlogPage = () => {
@@ -6,7 +6,7 @@ const BlogPage = () => {
     <main>
       <Providers>
         <Settings />
-        <Blog />
+        <Blogs />
       </Providers>
     </main>
   );

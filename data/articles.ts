@@ -3,7 +3,7 @@ const articlesObject = [
     id: 1,
     title: "UX Design Tips",
     date: "09-20-2023",
-    category: "UI/UX",
+    categories: ["UI", "UX", "Digital Marketing"],
     imageSrc: "/assets/images/uiDesign.jpg",
     intro:
       "Enhance user experiences with these valuable UX design tips. From user research to prototyping, dive into the world of user-centric design. Discover how to create interfaces that leave a lasting positive impression on users.",
@@ -36,7 +36,7 @@ const articlesObject = [
     id: 2,
     title: "JavaScript Fundamentals",
     date: "09-21-2023",
-    category: "Programming",
+    categories: ["Programming", "Application Development", "Web Development"],
     imageSrc: "/assets/images/javaScript.jpg",
     intro:
       "Get started with JavaScript programming. From variables to functions, this guide covers the fundamental concepts you need to know. Build a strong foundation in JavaScript and unlock the power to create interactive web applications.",
@@ -69,7 +69,7 @@ const articlesObject = [
     id: 3,
     title: "AI Ethics",
     date: "09-22-2023",
-    category: "AI",
+    categories: ["AI", "Programming", "Business"],
     imageSrc: "/assets/images/AI.jpg",
     intro:
       "Delve into the ethical considerations of artificial intelligence. Explore topics like bias, transparency, and responsible AI development. Join the conversation on AI ethics and contribute to the development of responsible and ethical AI solutions.",
@@ -102,8 +102,8 @@ const articlesObject = [
     id: 4,
     title: "Crypto Investing Guide",
     date: "09-23-2023",
-    category: "Crypto",
-    imageSrc: "/assets/images/crypto.jpg",
+    categories: ["Crypto", "Investing", "Business"],
+    imageSrc: "/assets/images/crypto.png",
     intro:
       "Navigate the world of cryptocurrency investing. From Bitcoin to altcoins, learn how to make informed decisions in this dynamic market. Make informed choices in the world of cryptocurrency investing and navigate the path to potential financial growth.",
     sections: [
@@ -135,7 +135,7 @@ const articlesObject = [
     id: 5,
     title: "Digital Marketing Expert Guide",
     date: "08-19-2023",
-    category: "Digital Marketing",
+    categories: ["Digital Marketing", "Business"],
     imageSrc: "/assets/images/digitalMarketer.jpg",
     intro:
       "In the digital age, a digital marketing expert is crucial for online business success. Our guide helps both experienced marketers transitioning to digital and newcomers passionate about online marketing. We cover essential skills and the latest trends for success in this ever-evolving field.",
@@ -198,7 +198,7 @@ const articlesObject = [
     id: 6,
     title: "UX for Growing Businesses",
     date: "07-25-2023",
-    category: "User exprience",
+    categories: ["UX", "UI", "Digital Marketing"],
     imageSrc: "/assets/images/ux.jpg",
     intro:
       "In today's business world, prioritizing User Experience (UX) is essential for success. Regardless of your company's size, recognizing the value of UX can greatly influence your growth. This guide explores how UX investments can boost business success, customer satisfaction, and long-term growth.",
@@ -255,7 +255,7 @@ const articlesObject = [
     id: 7,
     title: "Online Business Guide",
     date: "06-29-2023",
-    category: "Business",
+    categories: ["Digital Marketing", "Business"],
     imageSrc: "/assets/images/onlineBussiness.jpg",
     intro:
       "Launching an online business is thrilling yet challenging. To succeed, you need a strong grasp of the digital world. This guide covers key pre-launch insights, enabling smarter choices for your online business journey and enhancing your odds of success.",
@@ -319,11 +319,15 @@ const articlesObject = [
 const articlesCategoryObject = [
   "Business",
   "Digital Marketing",
-  "User Interface",
-  "User Exprience",
+  "UI",
+  "UX",
   "Application Development",
   "Programming",
   "Self Development",
+  "Crypto",
+  "Web Development",
+  "AI",
+  "Investing",
 ];
 
 export const articlesCategories = JSON.stringify(articlesCategoryObject);

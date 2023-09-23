@@ -1,12 +1,12 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
 
-import Providers from "@/components/Providers";
+import Providers from "@/components/shared/Providers";
 
 import { Footer, Header, Settings } from "@/components";
+import { BlogPost } from "@/components/index";
+
 import { articlesData } from "@/data/articles";
-import BlogPost from "@/components/BlogPost";
 const Post = () => {
   const searchParams = useSearchParams();
 
@@ -14,7 +14,6 @@ const Post = () => {
   let id = Number.parseInt(postId as string);
 
   const articles = JSON.parse(articlesData);
-
   const post = articles.find((post: Article) => post.id == id);
 
   return (

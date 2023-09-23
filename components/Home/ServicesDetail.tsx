@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa";
-import { themeContext } from "./Providers";
+import { themeContext } from "../shared/Providers";
 
 interface ServicesDetailProps {
   servicesDetailInfo: ServicesDetail;
@@ -24,7 +24,8 @@ const ServicesDetail = ({ servicesDetailInfo }: ServicesDetailProps) => {
           isThemeDark
             ? "bg-[#1E212B] hover:bg-[#212B36]"
             : "bg-gradient-to-r from-blue-200 to-green-100 text-slate-800"
-        } relative  transition-all ease-in duration-20000 flex justify-between px-6 sm:px-8 md:px-12 items-center  h-[87px] rounded-xl font-extrabold`}>
+        } relative  transition-all ease-in duration-20000 flex justify-between px-6 sm:px-8 md:px-12 items-center  h-[87px] rounded-xl font-extrabold`}
+      >
         <h6 className="sm:text-lg md:text-xl xl:font-bold font-semibold text-center">
           {title}
         </h6>
@@ -39,7 +40,8 @@ const ServicesDetail = ({ servicesDetailInfo }: ServicesDetailProps) => {
             : "bg-gradient-to-r from-blue-200 to-green-100  text-slate-900"
         } ${
           showServiceDetaile ? "opacity-100" : "opacity-0"
-        } p-6 pt-10 flex flex-col xl:flex-row  items-center gap-9 rounded-lg transition-all ease-in duration-200 w- -mt-4`}>
+        } p-6 pt-10 flex flex-col xl:flex-row  items-center gap-9 rounded-lg transition-all ease-in duration-200 w- -mt-4`}
+      >
         <Image
           src={imageSrc}
           alt="Services Details"

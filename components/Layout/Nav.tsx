@@ -1,8 +1,8 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
-import { settingsContext, themeContext } from "./Providers";
+import { settingsContext, themeContext } from "../shared/Providers";
 import Link from "next/link";
-import { MobileNav } from ".";
+import { MobileNav } from "..";
 import { FaCog } from "react-icons/fa";
 const Nav = ({ isMobileNavVisible, setIsMobileNavVisible }: NavProps) => {
   const [mobileNavContent, setMobileNavContent] = useState(<div></div>);
