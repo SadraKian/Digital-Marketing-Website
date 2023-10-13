@@ -8,10 +8,9 @@ type ArticleCardProps = {
   showArticle: boolean;
 };
 const ArticleHighlightCard = ({ article, showArticle }: ArticleCardProps) => {
-  const { title, intro, date, imageSrc } = article;
+  const { title, intro, imageSrc } = article;
 
   // Calling custom hook to format the date
-  const articleDate = useFormatDate(date);
 
   const { isThemeDark } = useContext(themeContext);
 
@@ -40,7 +39,7 @@ const ArticleHighlightCard = ({ article, showArticle }: ArticleCardProps) => {
             isThemeDark ? "text-gray-400" : "text-gray-700"
           }`}
         >
-          {articleDate}
+          10 Mehr 1402
         </span>
         <p className="text-sm md:text-base leading-7 p-3 font-semibold">
           {intro}

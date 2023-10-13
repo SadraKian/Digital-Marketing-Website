@@ -13,10 +13,15 @@ import Providers from "./shared/Providers";
 import Settings from "./Layout/Settings";
 import Loading from "./Layout/Loading";
 import Blogs from "./Blog/Blogs";
-import BlogHero from "./Blog/BlogHero";
 import BlogCategories from "./Blog/BlogCategories";
-import BlogPost from "./Blog/BlogPost";
 import Post from "./Blog/Post";
+import AboutHero from "./About/AboutHero";
+import ContactUs from "./About/ContactUs";
+import BlogCard from "./Blog/BlogCard";
+import LoadingRequset from "./Layout/LoadingRequset";
+import ErrorMsg from "./Layout/ErrorMsg";
+import { Pagination } from "swiper/modules";
+import AlertMessage from "./About/AlertMessage";
 
 export {
   Header,
@@ -34,8 +39,13 @@ export {
   Settings,
   Loading,
   Blogs,
-  BlogHero,
   BlogCategories,
-  BlogPost,
   Post,
+  AboutHero,
+  ContactUs,
+  BlogCard,
+  LoadingRequset,
+  ErrorMsg,
+  Pagination,
+  AlertMessage,
 };

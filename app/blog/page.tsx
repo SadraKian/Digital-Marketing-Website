@@ -5,8 +5,10 @@ const BlogPage = () => {
   return (
     <main>
       <Providers>
+        <Header />
         <Settings />
         <Blogs />
+        <Footer top="" />
       </Providers>
     </main>
   );

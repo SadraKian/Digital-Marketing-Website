@@ -49,3 +49,26 @@ type BlogPostProps = {
   isThemeDark: boolean;
   presets: string[];
 };
+
+type BlogDetails = {
+  id: number;
+  author: string;
+  tag?: { id: number; title: string };
+  category?: { id: number; title: string };
+  created_at: string;
+  title: string;
+  text: string;
+  image?: string;
+};
+
+type PaginationProps = {
+  count: number;
+  currentPage: number;
+  setCurrentPage: React.Dispatch<SetStateAction<number>>;
+};
+
+type ContactUsInfo = {
+  title: string;
+  email: string;
+  text: string;
+};

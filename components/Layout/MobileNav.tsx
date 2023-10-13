@@ -7,7 +7,8 @@ const MobileNav = ({ isMobileNavVisible, setIsMobileNavVisible }: NavProps) => {
     <div className="flex landscape:gap-9 flex-col gap-12 text-white">
       <button
         onClick={() => setIsMobileNavVisible(!isMobileNavVisible)}
-        className="absolute right-[10px] top-[10px] text-2xl hover:bg-gray-700 p-2 rounded-full transition-all ease-in duration-300">
+        className="absolute right-[10px] top-[10px] text-2xl hover:bg-gray-700 p-2 rounded-full transition-all ease-in duration-300"
+      >
         <FaTimes />
       </button>
       <div className="flex  gap-1 object-contain">
@@ -30,17 +31,30 @@ const MobileNav = ({ isMobileNavVisible, setIsMobileNavVisible }: NavProps) => {
       </div>
       <nav
         aria-label="Main Mobile Nav"
-        className=" flex flex-col landscape:gap-7 gap-14 font-semibold text-lg ">
-        <Link href="/" className="hover:text-yellow-300">
+        className=" flex flex-col landscape:gap-7 gap-14 font-semibold text-lg "
+      >
+        <Link
+          href="/"
+          className="hover:text-slate-400 transition-all ease-in duration-300"
+        >
           Home
         </Link>
-        <Link href="/blog" className="hover:text-yellow-300">
+        <Link
+          href="/blog"
+          className="hover:text-slate-400 transition-all ease-in duration-300"
+        >
           Blog
         </Link>
-        <Link href="" className="hover:text-yellow-300">
+        <Link
+          href="/about"
+          className="hover:text-slate-400 transition-all ease-in duration-300"
+        >
           About Us
         </Link>
-        <Link href="" className="hover:text-yellow-300">
+        <Link
+          href="/about#contactUs"
+          className="hover:text-slate-400 transition-all ease-in duration-300"
+        >
           Contact Us
         </Link>
       </nav>

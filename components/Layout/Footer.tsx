@@ -5,13 +5,13 @@ import { FaGithub, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { themeContext } from "../shared/Providers";
 import { useContext } from "react";
 
-const Footer = () => {
+const Footer = ({ top }: { top: string }) => {
   const { isThemeDark, presets } = useContext(themeContext);
   return (
     <footer
       className={`${
         isThemeDark ? "bg-[#232932]" : "bg-slate-700"
-      }  relative top-[150vh] text-white w-screen p-6 sm:p-8 md:p-9 flex flex-col items-center  gap-8`}
+      }  relative ${top} text-white w-screen p-6 sm:p-8 md:p-9 flex flex-col items-center  gap-8`}
     >
       <section className="flex flex-col w-4/5 sm:w-2/3 gap-8 items-center border-b-2 border-slate-500 border-solid py-10">
         <h6 className="text-lg sm:text-xl 2xl:text-3xl font-semibold ">

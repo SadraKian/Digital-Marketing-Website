@@ -67,7 +67,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         <themeContext.Provider
           value={{ isThemeDark, setIsThemeDark, presets, setPresets }}
         >
-          <div className="min-h-[200vh]" style={theme}>
+          <div className="w-screen  min-h-[200vh]" style={theme}>
             {children}
           </div>
         </themeContext.Provider>

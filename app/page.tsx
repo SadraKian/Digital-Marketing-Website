@@ -15,7 +15,7 @@ export default function Home() {
         <Header />
         <Hero />
         <Services />
-        <Footer />
+        <Footer top="top-[150vh]" />
       </Providers>
     </main>
   );

@@ -1,70 +1,91 @@
+"use client";
 import { useFormatDate } from "@/hooks";
 import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { API } from "@/Constants";
+import { useSearchParams } from "next/navigation";
+import { themeContext } from "../shared/Providers";
+import { useContext, useState } from "react";
+import { ErrorMsg, LoadingRequset } from "..";
 
-const Post = ({ post, isThemeDark, presets }: BlogPostProps) => {
-  const { title, intro, date, imageSrc, categories, sections, conclusion } =
-    post;
-  // Calling the custom hook to format the article date
-  const blogPostDate = useFormatDate(date);
+const Post = () => {
+  const searchParams = useSearchParams();
+  const post = searchParams.get("slug");
+  const [postData, setPostData] = useState<BlogDetails | null>();
+  const [isSucssesful, setIsSucssesful] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
+  const { isThemeDark } = useContext(themeContext);
+
+  const getPost = useQuery({
+    queryKey: ["get", "blogPost"],
+    queryFn: async () => {
+      try {
+        setIsLoading(true);
+        const resp = await axios.get(`${API}/blog/detail/${post}`);
+        setIsSucssesful(true);
+        setPostData(resp.data);
+        console.log(resp.data);
+      } catch (error: any) {
+        setErrMsg(error);
+      } finally {
+        setIsLoading(false);
+      }
+      return <></>;
+    },
+  });
+  getPost;
   return (
-    <article className="flex text-left flex-col w-5/6 gap-7 lg:gap-12 xl:gap-16 items-center max-w-[1440px]">
-      <div className="flex flex-col gap-3 items-center">
-        <h6
-          className={`${
-            isThemeDark ? "text-slate-400" : "text-slate-600"
-          }  font-semibold text-[15px] sm:text-[17px] md:text-[18px] xl:text-[22px] `}
-        >
-          Published {blogPostDate}
-        </h6>
-        <h1
-          className={`${
-            isThemeDark ? "text-slate-100" : "text-slate-800"
-          }   text-[20px] sm:text-[23px] md:text-[27px] lg:text-[32px] xl:text-[36px] font-extrabold`}
-        >
-          {title}
-        </h1>
-      </div>
-      <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 flex-wrap w-full justify-center">
-        {categories.map((category, index) => (
-          <button
-            key={index}
-            type="button"
-            className={`bg-[#085973] text-white rounded-xl px-3 h-9 md:px-8 lg:px-10 sm:font-semibold text-center  whitespace-nowrap`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-      <Image
-        src={imageSrc}
-        alt={title}
-        width="750"
-        height="500"
-        className="rounded-2xl w-full lg:w-[95%] lg:h-[550px]"
-      />
-
-      <p
-        id="blog-intro"
-        className="font-[500] text-blue-100 text-[17px] sm:text-[19px] md:text-[21px] lg:text-[23px] lg:px-10 2xl:px-12"
-      >
-        {intro}
-      </p>
-      <section className="flex flex-col self-start gap-9 md:gap-12 lg:gap-16 lg:px-10 2xl:px-12">
-        {sections.map((section, index) => (
-          <div key={index} className="flex flex-col gap-5">
-            <h6 className="text-[18px]  font-bold sm:text-[20px]">
-              {section.section_title}
+    <>
+      {isLoading && (
+        <div className="w-screen h-screen grid place-content-center pt-40">
+          <LoadingRequset />
+        </div>
+      )}
+      {!isLoading && isSucssesful && postData && (
+        <article className="flex  flex-col w-screen gap-7 lg:gap-12 xl:gap-16 items-center max-w-[1440px] min-h-screen pt-32 pb-32">
+          <div className="flex flex-col gap-3 items-center">
+            <h1
+              className={`${
+                isThemeDark ? "text-slate-100" : "text-slate-800"
+              }   text-[20px] sm:text-[23px] md:text-[27px] lg:text-[32px] xl:text-[36px] font-extrabold`}
+            >
+              {postData.title}
+            </h1>
+            <h6
+              className={`${
+                isThemeDark ? "text-slate-400" : "text-slate-600"
+              }  font-semibold text-[15px] sm:text-[17px] md:text-[18px] xl:text-[22px] `}
+            >
+              Published {useFormatDate(postData.created_at)}
             </h6>
-            <p className="sm:text-[17px] md:text-[18px] lg:text-[20px] sm:leading-8">
-              {section.section_content}
-            </p>
           </div>
-        ))}
-      </section>
-      <p className="self-start sm:text-[17px] md:text-[18px] lg:text-[20px] sm:leading-8 lg:px-10 2xl:px-12">
-        {conclusion}
-      </p>
-    </article>
+          {postData.image && (
+            <img
+              src={postData.image}
+              alt={postData.title}
+              className="rounded-2xl w-[95%] sm:w-[90%] lg:w-[85%] 2xl:ml-24 lg:h-[550px] 2xl:h-[600px]"
+            />
+          )}
+          {postData.tag?.title && (
+            <div className="w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16">
+              <button
+                type="button"
+                className={`text-white rounded-xl self-start px-6 h-9 md:px-8 lg:px-10 font-semibold text-center bg-[#085973] whitespace-nowrap`}
+              >
+                #{postData.tag.title}
+              </button>
+            </div>
+          )}
+          <p className="w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16 text-white sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold space tracking-wide">
+            {postData.text}
+          </p>
+        </article>
+      )}
+      {errMsg !== "" && !isLoading && <ErrorMsg errMsg={errMsg} />}
+    </>
   );
 };
 

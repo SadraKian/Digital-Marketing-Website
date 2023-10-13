@@ -1,9 +1,10 @@
+import ReactQueryProvider from "@/components/shared/ReactQueryProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing",
-  description: "a website for digital marketing services",
+  title: "Rasam",
+  description: "Rasam digital marketing services group website",
 };
 
 export default function RootLayout({
@@ -12,16 +13,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="overflow-x-hidden">
-      <head>
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="/assets/images/favicon.png"
-        />
-      </head>
+    <ReactQueryProvider>
+      <html lang="en" className="overflow-x-hidden scroll-smooth">
+        <head>
+          <link
+            rel="icon"
+            type="image/x-icon"
+            href="/assets/images/favicon.png"
+          />
+        </head>
 
-      <body>{children}</body>
-    </html>
+        <body>{children}</body>
+      </html>
+    </ReactQueryProvider>
   );
 }

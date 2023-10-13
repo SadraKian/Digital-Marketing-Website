@@ -64,9 +64,9 @@ const Settings = () => {
       <div
         className={`${
           !isSettingsOpen ? "opacity-0" : ""
-        } setting-content flex-col tall:gap-6 gap-3  items-center `}
+        } setting-content flex-col tall:gap-6 gap-3  items-center px-16 xsm:px-0`}
       >
-        <div className="flex  font-bold justify-between items-center border-b-2 border-dotted p-7 border-[#baccdb80]">
+        <div className="flex  font-bold justify-between items-center border-b-2 border-dotted py-7 xsm:p-7  border-[#baccdb80]">
           <h6>Settings</h6>
 
           <div className="flex gap-4 ">
@@ -93,8 +93,8 @@ const Settings = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2  tall:gap-4 py-2 tall:py-4 px-7">
-          <h6 className="font-semibold">Mode</h6>
+        <div className="flex flex-col gap-2  tall:gap-4 py-2 tall:py-4  px-7">
+          <h6 className="font-semibold   sm:ml-0">Mode</h6>
           <div className="flex gap-10 xsm:gap-8 w-full justify-center">
             <button
               onClick={() => {
@@ -126,7 +126,7 @@ const Settings = () => {
         </div>
 
         <div className="flex flex-col gap-4 py-4 px-7">
-          <h6 className="font-semibold">Language</h6>
+          <h6 className="font-semibold  sm:ml-0">Language</h6>
           <div className="flex gap-10 xsm:gap-8 w-full justify-center  text-white ">
             <button className="w-[90px] h-16 flex flex-col justify-center items-center gap-2 text-lg border border-solid border-[#5b646e75] rounded-xl transition-all ease-in duration-300 hover:bg-[#5b646e5e]">
               <FaGlobe />

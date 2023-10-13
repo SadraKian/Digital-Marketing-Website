@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Nav } from "..";
 import { FaCog } from "react-icons/fa";
 import { settingsContext, themeContext } from "../shared/Providers";
+import Link from "next/link";
 
 const Header = () => {
   // Using states for finding out if the webpage should show Mobile nav and if the page is scrolled
@@ -42,7 +43,8 @@ const Header = () => {
           : "bg-transparent h-[15vh]"
       } justify-between w-full z-40 object-contain py-4 px-4 md:px-8 lg:px-16 xl:px-24 transition-all ease-in duration-300`}
     >
-      <div
+      <Link
+        href="/"
         className={`flex gap-1 object-contain ${
           isPageScrolled ? "items-center" : ""
         }`}
@@ -71,7 +73,7 @@ const Header = () => {
           alt="Digital marketing logo"
           title="Digital Marketing"
         />
-      </div>
+      </Link>
 
       <Nav
         isMobileNavVisible={isMobileNavVisible}

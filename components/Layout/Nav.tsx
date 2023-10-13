@@ -39,16 +39,28 @@ const Nav = ({ isMobileNavVisible, setIsMobileNavVisible }: NavProps) => {
           aria-label="Main Dekstop Nav"
           className="flex gap-12 lg:gap-16 font-semibold"
         >
-          <Link href="/" className="hover:text-yellow-300">
+          <Link
+            href="/"
+            className="hover:text-slate-400 transition-all ease-in duration-300"
+          >
             Home
           </Link>
-          <Link href="/blog" className="hover:text-yellow-300">
+          <Link
+            href="/blog"
+            className="hover:text-slate-400 transition-all ease-in duration-300"
+          >
             Blog
           </Link>
-          <Link href="" className="hover:text-yellow-300">
+          <Link
+            href="/about"
+            className="hover:text-slate-400 transition-all ease-in duration-300"
+          >
             About Us
           </Link>
-          <Link href="" className="hover:text-yellow-300">
+          <Link
+            href="/about#contactUs"
+            className="hover:text-slate-400 transition-all ease-in duration-300"
+          >
             Contact Us
           </Link>
         </nav>
