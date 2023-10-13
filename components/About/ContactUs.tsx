@@ -59,7 +59,7 @@ const ContactUs = () => {
   return (
     <div id="contactUs" className="w-screen flex justify-center">
       {isLoading && (
-        <div className="flex flex-col  w-4/5 sm:w-[70%] md:w-4/5 lg:w-3/4 2xl:w-2/3 items-center  justify-evenly  my-36 ">
+        <div className="flex flex-col  w-4/5 sm:w-[70%] md:w-4/5 lg:w-3/4 2xl:w-2/3 items-center  justify-evenly  my-36 pl-24 2xl:pl-[110px]">
           <LoadingRequset />
         </div>
       )}
