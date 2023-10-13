@@ -1,6 +1,5 @@
 "use client";
 import { useFormatDate } from "@/hooks";
-import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { API } from "@/Constants";
@@ -40,7 +39,7 @@ const Post = () => {
   return (
     <>
       {isLoading && (
-        <div className="w-screen h-screen grid place-content-center pt-40">
+        <div className="w-screen h-screen grid place-content-center pt-40 pl-20">
           <LoadingRequset />
         </div>
       )}
@@ -50,14 +49,14 @@ const Post = () => {
             <h1
               className={`${
                 isThemeDark ? "text-slate-100" : "text-slate-800"
-              }   text-[20px] sm:text-[23px] md:text-[27px] lg:text-[32px] xl:text-[36px] font-extrabold`}
+              }   text-[20px] sm:text-[23px] 2xl:ml-24 md:text-[27px] lg:text-[32px] xl:text-[36px] font-extrabold`}
             >
               {postData.title}
             </h1>
             <h6
               className={`${
                 isThemeDark ? "text-slate-400" : "text-slate-600"
-              }  font-semibold text-[15px] sm:text-[17px] md:text-[18px] xl:text-[22px] `}
+              }  font-semibold text-[15px] sm:text-[17px] 2xl:ml-24 md:text-[18px] xl:text-[22px] `}
             >
               Published {useFormatDate(postData.created_at)}
             </h6>

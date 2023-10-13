@@ -20,7 +20,7 @@ const Blogs = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSucssesful, setIsSucssesful] = useState(false);
   const [pageCount, setPageCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number | null>(null);
   const getArticles = useQuery({
     queryKey: ["get", "articles"],
     queryFn: async () => {
@@ -96,11 +96,13 @@ const Blogs = () => {
             {pageCount > 1 &&
               data.map((blog: any) => <BlogCard key={blog.id} blog={blog} />)}
           </div>
-          <Pagination
-            count={pageCount}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+          {pageCount > 1 && currentPage && (
+            <Pagination
+              count={pageCount}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          )}
         </section>
       )}
       {errMsg !== "" && !isLoading && <ErrorMsg errMsg={errMsg} />}
