@@ -81,7 +81,7 @@ const Post = () => {
           <p
             className={`${
               !isThemeDark ? "text-black" : "text-white"
-            }w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16 text-white sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold space tracking-wide`}
+            }w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16  sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold space tracking-wide`}
           >
             {postData.text}
           </p>
