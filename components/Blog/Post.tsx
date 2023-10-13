@@ -39,7 +39,7 @@ const Post = () => {
   return (
     <>
       {isLoading && (
-        <div className="w-screen h-screen grid place-content-center pt-40 pl-20">
+        <div className="w-screen h-screen grid place-content-center pt-40 pl-36">
           <LoadingRequset />
         </div>
       )}
