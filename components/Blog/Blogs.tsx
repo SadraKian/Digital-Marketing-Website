@@ -64,7 +64,7 @@ const Blogs = () => {
     <section style={theme} className={`flex flex-col  min-h-screen `}>
       <BlogCategories />
       {isLoading && (
-        <div className="w-screen h-screen grid place-content-center pt-40 2xl:pl-[115px]">
+        <div className="w-screen h-screen flex justify-center items-center pt-40 pl-24 2xl:pl-[110px]">
           <LoadingRequset />
         </div>
       )}

@@ -38,7 +38,7 @@ const Post = () => {
   return (
     <>
       {isLoading && (
-        <div className="w-screen h-screen grid place-content-center pt-40 2xl:pl-[115px]">
+        <div className="w-screen h-screen grid place-content-center pt-40 pl-24 2xl:pl-[110px]">
           <LoadingRequset />
         </div>
       )}
@@ -68,7 +68,7 @@ const Post = () => {
             <img
               src={postData.image}
               alt={postData.title}
-              className="rounded-2xl w-[95%] sm:w-[90%] lg:w-[85%] 2xl:ml-24 lg:h-[550px] 2xl:h-[600px]"
+              className="rounded-2xl w-[90%] lg:w-[85%] 2xl:ml-24 lg:h-[550px] 2xl:h-[600px]"
             />
           )}
           {postData.tag?.title && (
