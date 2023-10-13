@@ -29,33 +29,15 @@ const Blogs = () => {
         setIsSucssesful(false);
         setIsLoading(true);
         const resp = await axios.get(
-          `${API}/blog/articles?page_number=${currentPage}`
+          `${API}/blog/articles${
+            currentPage ? `?page_number=${currentPage}` : ""
+          }`
         );
         setIsSucssesful(true);
         setData(resp.data.results);
         setPageCount(resp.data.count);
-        console.log(resp.data);
       } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-      return <></>;
-    },
-  });
-
-  const getArticlesCategory = useQuery({
-    queryKey: ["get", "articles", "category"],
-    queryFn: async () => {
-      try {
-        setErrMsg("");
-        setIsSucssesful(false);
-        setIsLoading(true);
-        const resp = await axios.get(`${API}/blog/tag/1`);
-
-        console.log(resp);
-      } catch (error) {
-        console.log(error);
+        setErrMsg(`${error}`);
       } finally {
         setIsLoading(false);
       }
