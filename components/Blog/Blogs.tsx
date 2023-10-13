@@ -33,7 +33,6 @@ const Blogs = () => {
         );
         setIsSucssesful(true);
         setData(resp.data.results);
-        console.log(resp.data.results);
 
         setPageCount(resp.data.count);
       } catch (error) {
