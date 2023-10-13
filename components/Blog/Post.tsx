@@ -44,7 +44,11 @@ const Post = () => {
         </div>
       )}
       {!isLoading && isSucssesful && postData && (
-        <article className="flex  flex-col w-screen gap-7 lg:gap-12 xl:gap-16 items-center max-w-[1440px] min-h-screen pt-32 pb-32">
+        <article
+          className={`${
+            isThemeDark ? "text-white" : "text-black"
+          } flex  flex-col w-screen gap-7 lg:gap-12 xl:gap-16 items-center max-w-[1440px] min-h-screen pt-32 pb-32`}
+        >
           <div className="flex flex-col gap-3 items-center">
             <h1
               className={`${
@@ -79,9 +83,8 @@ const Post = () => {
             </div>
           )}
           <p
-            className={`${
-              !isThemeDark ? "text-black" : "text-white"
-            }w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16  sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold space tracking-wide`}
+            className="
+            }w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16  sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold space tracking-wide"
           >
             {postData.text}
           </p>
