@@ -26,7 +26,6 @@ const Post = () => {
         const resp = await axios.get(`${API}/blog/detail/${post}`);
         setIsSucssesful(true);
         setPostData(resp.data);
-        console.log(resp.data);
       } catch (error: any) {
         setErrMsg(error);
       } finally {
@@ -39,7 +38,7 @@ const Post = () => {
   return (
     <>
       {isLoading && (
-        <div className="w-screen h-screen grid place-content-center pt-40 pl-36">
+        <div className="w-screen h-screen grid place-content-center pt-40 2xl:pl-[115px]">
           <LoadingRequset />
         </div>
       )}
@@ -84,7 +83,7 @@ const Post = () => {
           )}
           <p
             className="
-            }w-[90%] sm:w-[85%] lg:w-[80%] 2xl:ml-16  sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold space tracking-wide"
+            w-[80%] 2xl:ml-16  sm:text-[18px] lg:text-[20px] leading-8 md:leading-9 font-semibold  text-left tracking-wide"
           >
             {postData.text}
           </p>
