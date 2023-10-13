@@ -20,7 +20,7 @@ const Blogs = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSucssesful, setIsSucssesful] = useState(false);
   const [pageCount, setPageCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState<number | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const getArticles = useQuery({
     queryKey: ["get", "articles"],
     queryFn: async () => {
@@ -29,12 +29,12 @@ const Blogs = () => {
         setIsSucssesful(false);
         setIsLoading(true);
         const resp = await axios.get(
-          `${API}/blog/articles${
-            currentPage ? `?page_number=${currentPage}` : ""
-          }`
+          `${API}/blog/articles?page_number=${currentPage}`
         );
         setIsSucssesful(true);
         setData(resp.data.results);
+        console.log(resp.data.results);
+
         setPageCount(resp.data.count);
       } catch (error) {
         setErrMsg(`${error}`);
@@ -75,7 +75,7 @@ const Blogs = () => {
             Articles
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-content-center">
-            {pageCount > 1 &&
+            {pageCount >= 1 &&
               data.map((blog: any) => <BlogCard key={blog.id} blog={blog} />)}
           </div>
           {pageCount > 1 && currentPage && (
