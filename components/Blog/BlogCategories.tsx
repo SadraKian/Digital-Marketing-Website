@@ -1,13 +1,29 @@
 "use client";
-import React, { useContext, useState, useRef, useEffect } from "react";
-import { themeContext } from "../shared/Providers";
-import { articlesCategories } from "@/data/articles";
+import React, { useState, useRef, useEffect } from "react";
+
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+import { useRouter } from "next/navigation";
 
 const BlogCategories = () => {
-  const { presets } = useContext(themeContext);
-  const articlesCategoriesData = JSON.parse(articlesCategories);
+  const router = useRouter();
   const categoriesNav = useRef<HTMLDivElement>(null);
   const [scrolling, setScrolling] = useState(false);
+
+  const getCategoryList = useQuery({
+    queryKey: ["get", "category list information"],
+    queryFn: async () => {
+      try {
+        const resp = await axios.get(
+          "https://abolfazl1devtest.pythonanywhere.com/blog/category/list"
+        );
+        return resp.data;
+      } catch (error) {
+        return error;
+      }
+    },
+  });
 
   useEffect(() => {
     const handleWheelScroll = (event: WheelEvent) => {
@@ -49,17 +65,19 @@ const BlogCategories = () => {
       }}
       onMouseLeave={handleMouseLeave}
       aria-label="blog categories nav"
-      className={`relative top-[15vh] flex gap-3 md:gap-4 overflow-x-scroll scrollbar-hide h-20 md:h-16 items-center lg:gap-5 xl:gap-6 px-3 md:px-5 lg:px-7 text-white`}
-    >
-      {articlesCategoriesData.map((category: string, index: number) => (
-        <button
-          key={index}
-          type="button"
-          className={`rounded-xl px-6 h-9 md:px-8 lg:px-10 font-semibold text-center bg-[#085973] whitespace-nowrap`}
-        >
-          {category}
-        </button>
-      ))}
+      className={`w-[88%] flex gap-3 md:gap-4 overflow-x-scroll scrollbar-hide h-20 md:h-16 items-center lg:gap-5 xl:gap-6 px-3  text-white`}>
+      {getCategoryList.data &&
+        getCategoryList.data.map((category: any, index: number) => (
+          <button
+            onClick={() => {
+              router.push(`/blog/categories?category=${category.id}`);
+            }}
+            key={index}
+            type="button"
+            className={`rounded-xl px-6 h-9 md:px-8 lg:px-10 flex justify-center items-center font-semibold text-center bg-[#085973] whitespace-nowrap`}>
+            {category.title}
+          </button>
+        ))}
     </nav>
   );
 };

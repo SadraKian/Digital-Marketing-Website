@@ -82,12 +82,10 @@ const Hero = () => {
       ref={heroRef}
       className={`${
         heroFixed ? `fixed bottom-0` : ""
-      } tall:fixed flex min-h-screen w-full pt-[15vh]  tall:top-0 landscape:pt-24`}
-    >
+      } tall:fixed flex min-h-screen w-full pt-[15vh]  tall:top-0 landscape:pt-24`}>
       <div
         id="heroTextContent"
-        className="flex flex-col gap-12 sm:gap-[70px] xtall:gap-20 3xl:gap-28  w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10"
-      >
+        className="flex flex-col gap-12 sm:gap-[70px]   w-full items-center md2:items-start md:px-20 py-[5vh] md2:w-1/2 z-10">
         <div className="flex flex-col md:flex flex-wrap md2:items-start w-[300px] gap-5 items-center text-4xl xsm:text-5xl font-bold ">
           <span className="drop-shadow-[1px_1px_1px_lightgray]">
             Welcome to
@@ -98,8 +96,7 @@ const Hero = () => {
               style={{
                 color: presets[1],
                 textShadow: `2px 2px 4px ${presets[1]}`,
-              }}
-            >
+              }}>
               Website
             </span>
           </div>
@@ -117,8 +114,7 @@ const Hero = () => {
             boxShadow: `2px 3px 10px 0px ${presets[1]}`,
           }}
           className=" transition-all text-white ease-in hover:opacity-80 duration-300 font-semibold text-lg  w-28 h-11 rounded-lg
-          "
-        >
+          ">
           Start
         </button>
 
@@ -128,8 +124,7 @@ const Hero = () => {
               color: presets[1],
               textShadow: `1px 1px 2px ${presets[1]}`,
             }}
-            className=" font-semibold ml-3"
-          >
+            className=" font-semibold ml-3">
             AVAILABLE FOR
           </span>
           <div className="flex gap-3 ">
@@ -139,8 +134,7 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-green-500 hover:drop-shadow-[0_3px_4px_rgb(34,197,94)] transition-all ease-in duration-300`}
-            >
+              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-green-500 hover:drop-shadow-[0_3px_4px_rgb(34,197,94)] transition-all ease-in duration-300`}>
               <FaWhatsapp className=" opacity-80" />
             </Link>
             <Link
@@ -149,8 +143,7 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-gradient-to-br from-orange-500 to-yellow-500 hover:drop-shadow-[0_1px_2px_yellow] transition-all ease-in duration-300`}
-            >
+              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-gradient-to-br from-orange-500 to-yellow-500 hover:drop-shadow-[0_1px_2px_yellow] transition-all ease-in duration-300`}>
               <FaInstagram className=" opacity-80" />
             </Link>
             <Link
@@ -159,8 +152,7 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full   hover:bg-red-600 hover:drop-shadow-[0_2px_3px_rgb(239,68,68)] transition-all ease-in duration-300`}
-            >
+              } w-12 h-12 grid place-content-center text-2xl rounded-full   hover:bg-red-600 hover:drop-shadow-[0_2px_3px_rgb(239,68,68)] transition-all ease-in duration-300`}>
               <FaYoutube className=" opacity-80" />
             </Link>
             <Link
@@ -169,8 +161,7 @@ const Hero = () => {
                 isThemeDark
                   ? "bg-slate-400 text-slate-900"
                   : "bg-slate-900 text-gray-100"
-              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-purple-600 hover:drop-shadow-[0_3px_4px_rgb(147,51,234)] transition-all ease-in duration-300`}
-            >
+              } w-12 h-12 grid place-content-center text-2xl rounded-full  hover:bg-purple-600 hover:drop-shadow-[0_3px_4px_rgb(147,51,234)] transition-all ease-in duration-300`}>
               <FaGithub className=" opacity-80" />
             </Link>
           </div>

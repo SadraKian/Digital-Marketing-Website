@@ -3,13 +3,8 @@ import React from "react";
 
 const BlogPage = () => {
   return (
-    <main>
-      <Providers>
-        <Header />
-        <Settings />
-        <Blogs />
-        <Footer top="" />
-      </Providers>
+    <main className="w-full">
+      <Blogs />
     </main>
   );
 };

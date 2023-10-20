@@ -12,9 +12,8 @@ const BlogCard = ({ blog }: any) => {
         isThemeDark
           ? "bg-gradient-to-br from-[#72EDF2] to-[#5151E5]"
           : "bg-gradient-to-br from-[#92FFC0] to-[#002661]"
-      } w-[300px] md:w-[320px]
-         text-white rounded-md flex flex-col gap-6 hover:brightness-125 transition-all ease-in duration-300`}
-    >
+      } w-[275px] xl:w-[320px]
+         text-white rounded-md flex flex-col gap-6 hover:brightness-125 transition-all ease-in duration-300`}>
       {image && (
         <img src={image} alt={title} className="w-full rounded-md h-[220px]" />
       )}

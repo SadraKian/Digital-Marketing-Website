@@ -22,6 +22,7 @@ import LoadingRequset from "./Layout/LoadingRequset";
 import ErrorMsg from "./Layout/ErrorMsg";
 import { Pagination } from "swiper/modules";
 import AlertMessage from "./About/AlertMessage";
+import CategoryArticles from "./Blog/CategoryArticles";
 
 export {
   Header,
@@ -48,4 +49,5 @@ export {
   ErrorMsg,
   Pagination,
   AlertMessage,
+  CategoryArticles,
 };
